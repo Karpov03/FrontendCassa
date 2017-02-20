@@ -7,26 +7,30 @@
 	href="webjars/bootstrap/3.3.7/css/bootstrap.min.css" />
 <link rel="stylesheet" type="text/css" href="css/app.css" />
 </head>
-<body  ng-app="MainApp">
+<body ng-app="MainApp">
 	<h1>Angular Js ListMenu Via JSON</h1>
 
 	<div class="navigation" ng-controller="ListController">
-	
 
-	
+
 		<ul>
-			<li ng-repeat="site in SiteList" class="has-sub"><a href="#/site/{{
-					site.siteName }}" >{{
-					site.siteName }}</a>
+			<li ng-repeat="site in SiteList" class="has-sub"><a
+				ng-click="doSomething(site.siteId)"
+				href="#/site/{{
+					site.siteName }}">{{ site.siteName }}</a>
 
 				<ul>
-					<li ng-repeat="area in site.area" class="has-sub"><a href="#/area/{{
+					<li ng-repeat="area in site.area" class="has-sub"><a
+						ng-click="doSomething(area.areaId)"
+						href="#/area/{{
 					area.areaName }}">{{
 							area.areaName }}</a>
 
 
 						<ul>
-							<li ng-repeat="asset in area.asset"><a href="#/asset/{{
+							<li ng-repeat="asset in area.asset"><a
+								ng-click="doSomething(asset.assetId)"
+								href="#/asset/{{
 					asset.assetName }}">{{
 									asset.assetName }}</a></li>
 						</ul></li>
@@ -35,9 +39,9 @@
 	</div>
 
 	<br />
-	
 
-	
+
+
 	<div class="panel-heading">Cascading Dropdown using AngularJS and
 		MVC5</div>
 	<div class="panel-body">
