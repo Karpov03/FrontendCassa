@@ -10,8 +10,22 @@ mainApp.controller('ListController', function($scope, $http) {
 			});
 	
 	  $scope.doSomething = function(clickedId){
-		//  alert("Clicked Id is "+clickedId);
+
+
+//		  alert("Clicked Id is "+clickedId);
+
 		  console.log("Clicked Id is "+clickedId)
+		  
+		  $http.get("http://localhost:888/energycassiot/tags/gettag/10"+clickedId).then(
+					function(response) {
+						$scope.ClickedList = response.data; // response data
+
+					}, function(error) {
+						alert('Error!');
+					});
+		  
+		  
+		  
 	  };
 
 });
