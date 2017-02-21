@@ -1,4 +1,4 @@
-
+//mainApp.controller('ListController', ListController);
 
 mainApp.controller('ListController', function($scope, $http) {
 	$http.get("http://localhost:999/MegatechEnterprise/site/getSite").then(
@@ -9,12 +9,12 @@ mainApp.controller('ListController', function($scope, $http) {
 				alert('Error!');
 			});
 	
-	  $scope.doSomething = function(clickedId){
+	$scope.doSomething = function(clickedId,nameId){
 
 
 //		  alert("Clicked Id is "+clickedId);
 
-		  console.log("Clicked Id is "+clickedId)
+		  console.log("Clicked Id is "+clickedId+" : "+nameId)
 		  
 		  $http.get("http://localhost:888/energycassiot/tags/gettag/10"+clickedId).then(
 					function(response) {
@@ -27,5 +27,6 @@ mainApp.controller('ListController', function($scope, $http) {
 		  
 		  
 	  };
+
 
 });

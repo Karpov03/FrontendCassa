@@ -1,43 +1,37 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-<head lang="en">
+<head>
 <meta charset="utf-8" />
 <title>AngularJS Routing</title>
 <link rel="stylesheet" type="text/css"
-	href="webjars/bootstrap/3.3.7/css/bootstrap.min.css" />
+	href="webjars/bootstrap/3.3.7/css/bootstrap.min.css"/>
 <link rel="stylesheet" type="text/css" href="css/app.css" />
 </head>
-<body ng-app="MainApp">
+<body data-ng-app="MainApp">
 	<h1>Angular Js ListMenu Via JSON</h1>
 
-<div ng-controller="ListController">
-<h1 style="color: red;" ng-repeat="site in ClickedList">Value==={{ site.value }}</h1>
+<div data-ng-controller="ListController as listCtrl">
+<h1 style="color: red;" data-ng-repeat="site in ClickedList" >Value==={{ site.value }}</h1>
 
 	<div class="navigation" >
 
-<ul>
-			<li ng-repeat="site in ClickedList" class="has-sub">{{ site.siteName }}</li>
-				</ul>
-
-
-
 		<ul>
-			<li ng-repeat="site in SiteList" class="has-sub"><a
-				ng-click="doSomething(site.siteId)"
+			<li data-ng-repeat="site in SiteList" class="has-sub"><a
+				data-ng-click="doSomething(site.siteId,site.siteName)"
 				href="#/site/{{
 					site.siteName }}">{{ site.siteName }}</a>
 
 				<ul>
-					<li ng-repeat="area in site.area" class="has-sub"><a
-						ng-click="doSomething(area.areaId)"
+					<li data-ng-repeat="area in site.area" class="has-sub"><a
+						data-ng-click="doSomething(area.areaId,area.areaName)"
 						href="#/area/{{
 					area.areaName }}">{{
 							area.areaName }}</a>
 
 
 						<ul>
-							<li ng-repeat="asset in area.asset"><a
-								ng-click="doSomething(asset.assetId)"
+							<li data-ng-repeat="asset in area.asset"><a
+								data-ng-click="doSomething(asset.assetId)"
 								href="#/asset/{{
 					asset.assetName }}">{{
 									asset.assetName }}</a></li>
@@ -53,24 +47,24 @@
 	<div class="panel-heading">Cascading Dropdown using AngularJS and
 		MVC5</div>
 	<div class="panel-body">
-		<div ng-controller="DropdownController">
+		<div data-ng-controller="DropdownController">
 			<div class="dropdown">
 				Country : <select class="btn btn-primary dropdown-toggle"
-					ng-model="CountryID"
-					ng-options="I.siteId as I.siteName for I in CountryList"
-					ng-change="GetState()">
+					data-ng-model="CountryID"
+					data-ng-options="I.siteId as I.siteName for I in CountryList"
+					data-ng-change="GetState()">
 					<option value="">Select Country</option>
 				</select> State : <select class="btn btn-primary dropdown-toggle"
-					ng-model="StateID"
-					ng-options="I.areaId as I.areaName for I in StateList"
-					ng-change="GetCity()">
+					data-ng-model="StateID"
+					data-ng-options="I.areaId as I.areaName for I in StateList"
+					data-ng-change="GetCity()">
 					<option value="">{{StateTextToShow}}</option>
 				</select> City : <select class="btn btn-primary dropdown-toggle"
-					ng-model="CityID"
-					ng-options="I.assetId as I.assetName for I in CityList">
+					data-ng-model="CityID"
+					data-ng-options="I.assetId as I.assetName for I in CityList">
 					<option value="">{{CityTextToShow}}</option>
 				</select> <input class="btn btn-success" type="button"
-					value="Get Selected Values" ng-click="ShowResult()"
+					value="Get Selected Values" data-ng-click="ShowResult()"
 					data-toggle="modal" data-target="#myModal" /> <br />
 				<div class="modal fade" id="myModal" role="dialog">
 					<div class="modal-dialog">
