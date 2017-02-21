@@ -10,7 +10,7 @@ mainApp.controller('ListController', function($scope, $http) {
 			});
 	
 	  $scope.doSomething = function(clickedId){
-		  alert("Clicked Id is "+clickedId);
+		//  alert("Clicked Id is "+clickedId);
 		  console.log("Clicked Id is "+clickedId)
 	  };
 
