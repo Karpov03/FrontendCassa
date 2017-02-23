@@ -11,19 +11,18 @@
 	<h1>Angular Js ListMenu Via JSON</h1>
 
 <div data-ng-controller="ListController as listCtrl">
-<h1 style="color: red;" data-ng-repeat="site in ClickedList" >Value==={{ site.value }}</h1>
+<h1 style="color: red;" data-ng-repeat="site in listCtrl.ClickedList" >Value==={{ site.value }}</h1>
 
 	<div class="navigation" >
 
-		<ul>
-			<li data-ng-repeat="site in SiteList" class="has-sub"><a
-				data-ng-click="doSomething(site.siteId,site.siteName)"
-				href="#/site/{{
-					site.siteName }}">{{ site.siteName }}</a>
+		<ul >
+			<li data-ng-repeat="site in listCtrl.SiteList" class="has-sub"><a
+				data-ng-click="listCtrl.doSomething(site.siteId,site.siteName)"
+				href="#/site/{{site.siteName }}">{{ site.siteName }}</a>
 
 				<ul>
 					<li data-ng-repeat="area in site.area" class="has-sub"><a
-						data-ng-click="doSomething(area.areaId,area.areaName)"
+						data-ng-click="listCtrl.doSomething(area.areaId)"
 						href="#/area/{{
 					area.areaName }}">{{
 							area.areaName }}</a>
@@ -31,7 +30,7 @@
 
 						<ul>
 							<li data-ng-repeat="asset in area.asset"><a
-								data-ng-click="doSomething(asset.assetId)"
+								data-ng-click="listCtrl.doSomething(asset.assetId)"
 								href="#/asset/{{
 					asset.assetName }}">{{
 									asset.assetName }}</a></li>

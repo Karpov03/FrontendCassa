@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<title>:: Simple KWH ::</title>
+<!-- Tell the browser to be responsive to screen width -->
+<meta
+	content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
+	name="viewport" />
+<!-- Bootstrap 3.3.6 -->
+<link rel="stylesheet" type="text/css"
+	href="webjars/bootstrap/3.3.7/css/bootstrap.min.css" />
+<!-- Font Awesome -->
+<link rel="stylesheet"
+	href="plugins/font-awesome-4.7.0/css/font-awesome.min.css" />
+<!-- Theme style -->
+<link rel="stylesheet" href="dist/css/AdminLTE.min.css" />
+<link rel="stylesheet" href="dist/css/skin-blue.min.css" />
+
+
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
+</head>
+<body class="hold-transition skin-blue sidebar-mini"
+	data-ng-app="MainApp">
+	<div class="wrapper" data-ng-controller="ListController as listCtrl">
+
+		<!-- Main Header -->
+		<header class="main-header">
+
+			<!-- Logo -->
+			<a href="#" class="logo" style="height: 60px;"> <!-- mini logo for sidebar mini 50x50 pixels -->
+				<span class="logo-mini">KWH</span> <!-- logo for regular state and mobile devices -->
+				<span class="logo-lg"> Simple KWH</span>
+			</a>
+
+			<!-- Header Navbar -->
+			<nav class="navbar navbar-static-top" role="navigation">
+				<!-- Sidebar toggle button-->
+				<a href="#" class="sidebar-toggle" data-toggle="offcanvas"
+					role="button"> <span class="sr-only">Toggle navigation</span>
+				</a>
+				<!-- Navbar Right Menu -->
+				<div class="navbar-custom-menu">
+					<ul class="nav navbar-nav">
+						<!-- Messages: style can be found in dropdown.less-->
+
+						<!-- /.messages-menu -->
+
+						<!-- Notifications Menu -->
+						<li class="dropdown notifications-menu">
+							<!-- Menu toggle button --> <a href="#" class="dropdown-toggle"
+							data-toggle="dropdown"> <i class="fa fa-bell-o"
+								style="color: black"></i> <span class="label label-warning">10</span>
+						</a>
+							<ul class="dropdown-menu">
+								<li class="header">You have 10 notifications</li>
+								<li>
+									<!-- Inner Menu: contains the notifications -->
+									<ul class="menu">
+										<li>
+											<!-- start notification --> <a href="#"> <i
+												class="fa fa-users text-aqua"></i> 5 new members joined
+												today
+										</a>
+										</li>
+										<!-- end notification -->
+									</ul>
+								</li>
+								<li class="footer"><a href="#">View all</a></li>
+							</ul>
+						</li>
+						<!-- Tasks Menu -->
+
+						<!-- User Account Menu -->
+						<li class="dropdown user user-menu">
+							<!-- Menu Toggle Button --> <a href="#" class="dropdown-toggle"
+							data-toggle="dropdown"> <!-- The user image in the navbar-->
+								<img src="dist/img/user2-160x160.jpg" class="user-image"
+								alt="User Image" /> <!-- hidden-xs hides the username on small devices so only the image appears. -->
+								<span style="color: black" class="hidden-xs">User Name</span>
+						</a>
+							<ul class="dropdown-menu">
+								<!-- The user image in the menu -->
+								<li class="user-header"><img
+									src="dist/img/user2-160x160.jpg" class="img-circle"
+									alt="User Image" />
+									<p>
+										User Name - Last Name <small>Sample text goes here</small>
+									</p></li>
+								<!-- Menu Body -->
+
+								<!-- Menu Footer-->
+								<li class="user-footer">
+									<div class="pull-left">
+										<a href="#" class="btn btn-default btn-flat">Profile</a>
+									</div>
+									<div class="pull-right">
+										<a href="#" class="btn btn-default btn-flat">Sign out</a>
+									</div>
+								</li>
+							</ul>
+						</li>
+						<!-- Control Sidebar Toggle Button -->
+						<li><a href="#" data-toggle="control-sidebar"><i
+								class="fa fa-gears" style="color: black"></i></a></li>
+					</ul>
+				</div>
+			</nav>
+		</header>
+
+		<!-- Left side column. contains the logo and sidebar -->
+		<aside class="main-sidebar">
+			<section class="sidebar">
+				<ul class="sidebar-menu">
+					<!-- Optionally, you can add icons to the links -->
+					<li class="active"><a href="#"><i class="fa fa-home"></i>
+							<span>Home</span></a></li>
+					<li class="treeview"><a href="#"><i class="fa fa-home"></i> <span>Sites</span></a>
+						<ul class="treeview-menu">
+							<li class="treeview" data-ng-repeat="site in listCtrl.SiteList"><a
+								data-ng-click="listCtrl.doSomething(site.siteId,site.siteName)"
+								href="#/site/{{site.siteName }}">{{ site.siteName }}</a>
+
+								<ul class="treeview-menu">
+									<li data-ng-repeat="area in site.area"><a
+										data-ng-click="listCtrl.doSomething(area.areaId)"
+										href="#/area/{{
+					area.areaName }}">{{ area.areaName
+											}}</a></li>
+								</ul></li>
+						</ul></li>
+					<li><a href="#"><i class="fa fa-area-chart"></i> <span>Reports</span></a></li>
+					<li><a href="#"><i class="fa fa-bell-o"></i> <span>Alerts</span></a></li>
+				</ul>
+				<!-- /.sidebar-menu -->
+			</section>
+			<!-- /.sidebar -->
+		</aside>
+		<!-- Content Wrapper. Contains page content -->
+
+		<div class="content-wrapper">
+			<section class="content">
+
+				<!-- Page Content Here -->
+
+				<div class="row">
+
+					<!-- /.col (left) -->
+					<div class="col-md-12">
+						<div class="box box-primary">
+							<div class="box-body">
+								<div class="col-xs-6 col-sm-4 col-md-2">
+									<div class="btnnew-group ">
+										<button type="button" class="btnnew btn-default">
+											<i class="fa fa-chevron-left"></i>
+										</button>
+										<div class="btnnew ">DAYS</div>
+										<button type="button" class="btnnew btn-default">
+											<i class="fa fa-chevron-right"></i>
+										</button>
+									</div>
+								</div>
+								<div class="col-xs-6 col-sm-4 col-md-2">
+									<div class="btnnew-group ">
+										<button type="button" class="btnnew btn-default">
+											<i class="fa fa-chevron-left"></i>
+										</button>
+										<div class="btnnew">WEEK</div>
+										<button type="button" class="btnnew btn-default">
+											<i class="fa fa-chevron-right"></i>
+										</button>
+									</div>
+								</div>
+								<div class="col-xs-6 col-sm-4 col-md-2">
+									<div class="btnnew-group ">
+										<button type="button" class="btnnew btn-default">
+											<i class="fa fa-chevron-left"></i>
+										</button>
+										<div class="btnnew">MONTH</div>
+										<button type="button" class="btnnew btn-default">
+											<i class="fa fa-chevron-right"></i>
+										</button>
+									</div>
+								</div>
+								<div class="col-xs-6 col-sm-4 col-md-2">
+									<div class="btnnew-group ">
+										<button type="button" class="btnnew btn-default">
+											<i class="fa fa-chevron-left"></i>
+										</button>
+										<div class="btnnew">YEAR</div>
+										<button type="button" class="btnnew btn-default">
+											<i class="fa fa-chevron-right"></i>
+										</button>
+									</div>
+								</div>
+								<div class="col-xs-12 col-sm-12 col-md-4"></div>
+
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-2">
+						<!-- Widget: user widget style 1 -->
+						<div class="box box-widget widget-user-2">
+							<!-- Add the bg color to the header using any of the bg-* classes -->
+							<div class="widget" style="text-align: center">
+
+								<!-- /.widget-user-image -->
+								<h4 class="widget-user">Actual Consumption</h4>
+							</div>
+							<div class="box-footer">
+								<div class="row">
+									<div class="col-sm-12">
+										<div class="description-block">
+											<p class="bignumber" data-ng-modal="site in listCtrl.ClickedList">
+												70::::{{calculateAverage(2)}}<span class="smalltag">KWH</span>
+											</p>
+											<div class="progress sm">
+												<div class="progress-bar progress-bar-aqua"
+													style="width: 70%"></div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-2">
+						<!-- Widget: user widget style 1 -->
+						<div class="box box-widget widget-user-2">
+							<!-- Add the bg color to the header using any of the bg-* classes -->
+							<div class="widget" style="text-align: center">
+
+								<!-- /.widget-user-image -->
+								<h4 class="widget-user">Budget Consumed</h4>
+							</div>
+							<div class="box-footer">
+								<div class="row">
+									<div class="col-sm-12">
+										<div class="description-block">
+											<p class="bignumber">
+												60 <span class="smalltag">%</span>
+											</p>
+											<div class="progress sm">
+												<div class="progress-bar progress-bar-red"
+													style="width: 60%"></div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-2">
+						<div class="box box-widget widget-user-2">
+							<div class="widget" style="text-align: center">
+
+								<!-- /.widget-user-image -->
+								<h4 class="widget-user">Average Daily Load</h4>
+							</div>
+							<div class="box-footer">
+								<div class="row">
+									<div class="col-sm-12">
+										<div class="description-block">
+											<p class="bignumber">
+												50 <span class="smalltag">KWH</span>
+											</p>
+											<div class="progress sm">
+												<div class="progress-bar progress-bar-green"
+													style="width: 50%"></div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-2">
+						<!-- Widget: user widget style 1 -->
+						<div class="box box-widget widget-user-2">
+							<!-- Add the bg color to the header using any of the bg-* classes -->
+							<div class="widget" style="text-align: center">
+
+								<!-- /.widget-user-image -->
+								<h4 class="widget-user">Working Hours</h4>
+							</div>
+							<div class="box-footer">
+								<div class="row">
+									<div class="col-sm-12">
+										<div class="description-block">
+											<p class="bignumber">
+												80 <span class="smalltag">KWH</span>
+											</p>
+											<div class="progress sm">
+												<div class="progress-bar progress-bar-yellow"
+													style="width: 80%"></div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-2">
+						<!-- Widget: user widget style 1 -->
+						<div class="box box-widget widget-user-2">
+							<!-- Add the bg color to the header using any of the bg-* classes -->
+							<div class="widget" style="text-align: center">
+
+								<!-- /.widget-user-image -->
+								<h4 class="widget-user">Per Capita Consumed</h4>
+							</div>
+							<div class="box-footer">
+								<div class="row">
+									<div class="col-sm-12">
+										<div class="description-block">
+											<p class="bignumber">
+												05 <span class="smalltag">KWH</span>
+											</p>
+											<div class="progress sm">
+												<div class="progress-bar progress-bar-green"
+													style="width: 10%"></div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-2">
+						<!-- Widget: user widget style 1 -->
+						<div class="box box-widget widget-user-2">
+							<!-- Add the bg color to the header using any of the bg-* classes -->
+							<div class="widget" style="text-align: center">
+
+								<!-- /.widget-user-image -->
+								<h4 class="widget-user">Sq Ft Consumption</h4>
+							</div>
+							<div class="box-footer">
+								<div class="row">
+									<div class="col-sm-12">
+										<div class="description-block">
+											<p class="bignumber">
+												45 <span class="smalltag">KWH</span>
+											</p>
+											<div class="progress sm">
+												<div class="progress-bar progress-bar-yellow"
+													style="width: 45%"></div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- /.content -->
+		</div>
+		<!-- /.content-wrapper -->
+
+		<div class="control-sidebar-bg"></div>
+	</div>
+	<!-- ./wrapper -->
+
+	<!-- REQUIRED JS SCRIPTS -->
+
+
+
+	<script type="text/javascript" src="webjars/angularjs/1.6.1/angular.js"></script>
+	<script type="text/javascript"
+		src="webjars/angularjs/1.6.1/angular-route.js"></script>
+	<script type="text/javascript"
+		src="webjars/angularjs/1.6.1/angular-resource.js"></script>
+	<!-- jQuery 2.2.3 -->
+	<script src="plugins/jQuery/jquery-2.2.3.min.js"></script>
+	<script type="text/javascript"
+		src="webjars/bootstrap/3.3.7/js/bootstrap.js"></script>
+	<script type="text/javascript" src="js/appFront.js"></script>
+	<script type="text/javascript" src="js/listController.js"></script>
+
+
+	<!-- AdminLTE App -->
+	<script src="dist/js/app.min.js"></script>
+	<!-- AdminLTE for demo purposes -->
+</body>
+
+</html>

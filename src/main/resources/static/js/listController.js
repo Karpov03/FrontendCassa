@@ -1,15 +1,16 @@
-//mainApp.controller('ListController', ListController);
 
-mainApp.controller('ListController', function($scope, $http) {
+var ListController= function($scope, $http) {
+	
+	var $this=this;
 	$http.get("http://localhost:999/MegatechEnterprise/site/getSite").then(
 			function(response) {
-				$scope.SiteList = response.data; // response data
+				$this.SiteList = response.data; // response data
 
 			}, function(error) {
 				alert('Error!');
 			});
 	
-	$scope.doSomething = function(clickedId,nameId){
+	$this.doSomething = function(clickedId,nameId){
 
 
 //		  alert("Clicked Id is "+clickedId);
@@ -18,7 +19,8 @@ mainApp.controller('ListController', function($scope, $http) {
 		  
 		  $http.get("http://localhost:888/energycassiot/tags/gettag/10"+clickedId).then(
 					function(response) {
-						$scope.ClickedList = response.data; // response data
+						$this.ClickedList = response.data;// response data
+					
 
 					}, function(error) {
 						alert('Error!');
@@ -27,6 +29,19 @@ mainApp.controller('ListController', function($scope, $http) {
 		  
 		  
 	  };
+	  
+	  $this.calculateAverage = function(MyData){ 
+		 console.log(Mydata.length);
+		    var sum = 0; 
+		    for(var i = 0; i < MyData.length; i++){
+		        sum += parseInt(MyData[i], 10); //don't forget to add the base 
+		    }
 
+		    var avg = sum/MyData.length;
 
-});
+		    return avg; 
+		};
+}
+
+mainApp.controller('ListController', ListController);
+
