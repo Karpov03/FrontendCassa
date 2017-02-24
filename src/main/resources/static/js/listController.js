@@ -2,7 +2,7 @@
 var ListController= function($scope, $http) {
 	
 	var $this=this;
-	$http.get("http://localhost:999/MegatechEnterprise/site/getSite").then(
+	$http.get("https://megatechenterprise.mybluemix.net/site/getSite").then(
 			function(response) {
 				$this.SiteList = response.data; // response data
 
@@ -17,7 +17,7 @@ var ListController= function($scope, $http) {
 
 		  console.log("Clicked Id is "+clickedId+" : "+nameId)
 		  
-		  $http.get("http://localhost:888/energycassiot/tags/gettag/10"+clickedId).then(
+		  $http.get("https://energyiotcassandra.mybluemix.net/tags/gettag/10"+clickedId).then(
 					function(response) {
 						$this.ClickedList = response.data;// response data
 					
@@ -29,18 +29,7 @@ var ListController= function($scope, $http) {
 		  
 		  
 	  };
-	  
-	  $this.calculateAverage = function(MyData){ 
-		 console.log(Mydata.length);
-		    var sum = 0; 
-		    for(var i = 0; i < MyData.length; i++){
-		        sum += parseInt(MyData[i], 10); //don't forget to add the base 
-		    }
-
-		    var avg = sum/MyData.length;
-
-		    return avg; 
-		};
+	 
 }
 
 mainApp.controller('ListController', ListController);

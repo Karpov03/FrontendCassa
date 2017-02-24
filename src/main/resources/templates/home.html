@@ -121,7 +121,7 @@
 					<!-- Optionally, you can add icons to the links -->
 					<li class="active"><a href="#"><i class="fa fa-home"></i>
 							<span>Home</span></a></li>
-					<li class="treeview"><a href="#"><i class="fa fa-home"></i> <span>Sites</span></a>
+					<li class="treeview"><a href="#"><i class="fa fa-database"></i> <span>Sites</span></a>
 						<ul class="treeview-menu">
 							<li class="treeview" data-ng-repeat="site in listCtrl.SiteList"><a
 								data-ng-click="listCtrl.doSomething(site.siteId,site.siteName)"
@@ -219,8 +219,8 @@
 								<div class="row">
 									<div class="col-sm-12">
 										<div class="description-block">
-											<p class="bignumber" data-ng-modal="site in listCtrl.ClickedList">
-												70::::{{calculateAverage(2)}}<span class="smalltag">KWH</span>
+											<p class="bignumber" data-ng-repeat="site in listCtrl.ClickedList">
+												{{site.value}} <span class="smalltag"> KWH</span>
 											</p>
 											<div class="progress sm">
 												<div class="progress-bar progress-bar-aqua"
