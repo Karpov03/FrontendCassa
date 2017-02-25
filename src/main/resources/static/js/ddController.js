@@ -103,12 +103,12 @@ mainApp
 					}
 					fac.GetState = function(countryID) {
 						return $http
-								.get('http://localhost:999/MegatechEnterprise/site/getSite/id/'
+								.get('http://localhost:999/MegatechEnterprise/site/getSite/'
 										+ countryID)
 					}
 					fac.GetCity = function(stateID) {
 						return $http
-								.get('http://localhost:999/MegatechEnterprise/area/getArea/id/'
+								.get('http://localhost:999/MegatechEnterprise/area/getArea/'
 										+ stateID)
 					}
 

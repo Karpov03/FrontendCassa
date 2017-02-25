@@ -1,0 +1,225 @@
+
+		<!-- Content Wrapper. Contains page content -->
+
+		<div class="content-wrapper">
+			<section class="content">
+
+				<!-- Page Content Here -->
+
+				<div class="row">
+
+					<!-- /.col (left) -->
+					<div class="col-md-12">
+						<div class="box box-primary">
+							<div class="box-body">
+								<div class="col-xs-6 col-sm-4 col-md-2">
+									<div class="btnnew-group ">
+										<button type="button" class="btnnew btn-default">
+											<i class="fa fa-chevron-left"></i>
+										</button>
+										<div class="btnnew ">DAYS</div>
+										<button type="button" class="btnnew btn-default">
+											<i class="fa fa-chevron-right"></i>
+										</button>
+									</div>
+								</div>
+								<div class="col-xs-6 col-sm-4 col-md-2">
+									<div class="btnnew-group ">
+										<button type="button" class="btnnew btn-default">
+											<i class="fa fa-chevron-left"></i>
+										</button>
+										<div class="btnnew">WEEK</div>
+										<button type="button" class="btnnew btn-default">
+											<i class="fa fa-chevron-right"></i>
+										</button>
+									</div>
+								</div>
+								<div class="col-xs-6 col-sm-4 col-md-2">
+									<div class="btnnew-group ">
+										<button type="button" class="btnnew btn-default">
+											<i class="fa fa-chevron-left"></i>
+										</button>
+										<div class="btnnew">MONTH</div>
+										<button type="button" class="btnnew btn-default">
+											<i class="fa fa-chevron-right"></i>
+										</button>
+									</div>
+								</div>
+								<div class="col-xs-6 col-sm-4 col-md-2">
+									<div class="btnnew-group ">
+										<button type="button" class="btnnew btn-default">
+											<i class="fa fa-chevron-left"></i>
+										</button>
+										<div class="btnnew">YEAR</div>
+										<button type="button" class="btnnew btn-default">
+											<i class="fa fa-chevron-right"></i>
+										</button>
+									</div>
+								</div>
+								<div class="col-xs-12 col-sm-12 col-md-4"></div>
+
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-2">
+						<!-- Widget: user widget style 1 -->
+						<div class="box box-widget widget-user-2">
+							<!-- Add the bg color to the header using any of the bg-* classes -->
+							<div class="widget" style="text-align: center">
+
+								<!-- /.widget-user-image -->
+								<h4 class="widget-user">Actual Consumption</h4>
+							</div>
+							<div class="box-footer">
+								<div class="row">
+									<div class="col-sm-12">
+										<div class="description-block">
+											<p class="bignumber"
+												data-ng-repeat="site in listCtrl.ClickedList">
+												{{site.value}} <span class="smalltag"> KWH</span>
+											</p>
+											<div class="progress sm">
+												<div class="progress-bar progress-bar-aqua"
+													style="width: 70%"></div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-2">
+						<!-- Widget: user widget style 1 -->
+						<div class="box box-widget widget-user-2">
+							<!-- Add the bg color to the header using any of the bg-* classes -->
+							<div class="widget" style="text-align: center">
+
+								<!-- /.widget-user-image -->
+								<h4 class="widget-user">Budget Consumed</h4>
+							</div>
+							<div class="box-footer">
+								<div class="row">
+									<div class="col-sm-12">
+										<div class="description-block">
+											<p class="bignumber">
+												60 <span class="smalltag">%</span>
+											</p>
+											<div class="progress sm">
+												<div class="progress-bar progress-bar-red"
+													style="width: 60%"></div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-2">
+						<div class="box box-widget widget-user-2">
+							<div class="widget" style="text-align: center">
+
+								<!-- /.widget-user-image -->
+								<h4 class="widget-user">Average Daily Load</h4>
+							</div>
+							<div class="box-footer">
+								<div class="row">
+									<div class="col-sm-12">
+										<div class="description-block">
+											<p class="bignumber">
+												50 <span class="smalltag">KWH</span>
+											</p>
+											<div class="progress sm">
+												<div class="progress-bar progress-bar-green"
+													style="width: 50%"></div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-2">
+						<!-- Widget: user widget style 1 -->
+						<div class="box box-widget widget-user-2">
+							<!-- Add the bg color to the header using any of the bg-* classes -->
+							<div class="widget" style="text-align: center">
+
+								<!-- /.widget-user-image -->
+								<h4 class="widget-user">Working Hours</h4>
+							</div>
+							<div class="box-footer">
+								<div class="row">
+									<div class="col-sm-12">
+										<div class="description-block">
+											<p class="bignumber">
+												80 <span class="smalltag">KWH</span>
+											</p>
+											<div class="progress sm">
+												<div class="progress-bar progress-bar-yellow"
+													style="width: 80%"></div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-2">
+						<!-- Widget: user widget style 1 -->
+						<div class="box box-widget widget-user-2">
+							<!-- Add the bg color to the header using any of the bg-* classes -->
+							<div class="widget" style="text-align: center">
+
+								<!-- /.widget-user-image -->
+								<h4 class="widget-user">Per Capita Consumed</h4>
+							</div>
+							<div class="box-footer">
+								<div class="row">
+									<div class="col-sm-12">
+										<div class="description-block">
+											<p class="bignumber">
+												05 <span class="smalltag">KWH</span>
+											</p>
+											<div class="progress sm">
+												<div class="progress-bar progress-bar-green"
+													style="width: 10%"></div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-2">
+						<!-- Widget: user widget style 1 -->
+						<div class="box box-widget widget-user-2">
+							<!-- Add the bg color to the header using any of the bg-* classes -->
+							<div class="widget" style="text-align: center">
+
+								<!-- /.widget-user-image -->
+								<h4 class="widget-user">Sq Ft Consumption</h4>
+							</div>
+							<div class="box-footer">
+								<div class="row">
+									<div class="col-sm-12">
+										<div class="description-block">
+											<p class="bignumber">
+												45 <span class="smalltag">KWH</span>
+											</p>
+											<div class="progress sm">
+												<div class="progress-bar progress-bar-yellow"
+													style="width: 45%"></div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- /.content -->
+		</div>
+		<!-- /.content-wrapper -->
