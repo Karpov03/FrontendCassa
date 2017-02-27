@@ -133,7 +133,7 @@
 							<div class="col-sm-12">
 								<div class="description-block">
 									<p class="bignumber" data-ng-repeat="site in ClickedList"
-										data-ng-if="site.tagid == 102">
+										data-ng-if="site.tagid == 107">
 										{{ site.value }} <span class="smalltag">KWH</span>
 									</p>
 									<div class="progress sm">
@@ -235,15 +235,18 @@
 		</div>
 
 
-<div class="row" data-ng-controller="chartController" style="width: 700px;">
+		<div class="row" data-ng-controller="chartController"
+			style="width: 100%;">
 
-<div class="col-md-12">
+			<div class="col-md-12">
 
-		<canvas id="bar" class="chart chart-bar" chart-data="data"
-			chart-labels="labels" chart-series="series" chart-colors="colors"  chart-dataset-override="datasetOverride">
-        </canvas>
-        </div>
-	</div>
+				<canvas id="bar" class="chart chart-bar" data-chart-data="data"
+					data-chart-labels="labels" data-chart-series="series"
+					data-chart-colors="colors"
+					data-chart-dataset-override="datasetOverride">
+                </canvas>
+			</div>
+		</div>
 
 	</section>
 	<!-- /.content -->
@@ -255,7 +258,7 @@
 			class="chart"></div>
 	</div> -->
 
-	
+
 
 </div>
 <!-- /.content-wrapper -->

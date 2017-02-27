@@ -10,7 +10,7 @@
 
 	<a href="#/home"> Home</a>
 	<a href="#/viewStudents"> View Students List</a> -->
-	
+
 	<!-- <div ng-controller="myCtrl">
 		<select ng-model="selectedName" ng-options="x for x in names">
 		</select>
@@ -26,7 +26,25 @@
 		</select>
 	</div>
 
-<!-- 
+	<div data-ng-controller="dateCtrl">
+
+		<p>
+			<label>Select a date</label> <input type="date" id="Sdate"
+				data-ng-model="startDate" /> <input type="date" id="Edate"
+				data-ng-model="endDate" />
+			<a href="#" data-ng-click="getDate(startDate,endDate)">GetData</a>
+
+		</p>
+		
+		<ul>
+Selected value::::
+		<li data-ng-repeat="site in SelectedData">{{site.value}}</li>
+	</ul>
+	</div>
+
+	
+
+	<!-- 
  <h3>List of Sites</h3>
   
   <div ng-controller="siteCtrl">
@@ -36,8 +54,8 @@
   </div>
 
   <h3>List of Areas</h3> -->
-  
- <!--  <div ng-controller="areaCtrl">
+
+	<!--  <div ng-controller="areaCtrl">
     <ul ng-repeat="area in areas">
       <li>{{area.areaName}}</li>
     </ul>
@@ -48,17 +66,14 @@
 		<ng-view></ng-view>
 	</div> -->
 
-	<!--  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js"></script>
-	  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular-route.min.js"></script>
-	   
-	<script type="text/javascript" src="node_modules/angular/angular.min.js"></script>
+
 	<script type="text/javascript" src="webjars/angularjs/1.6.1/angular.js"></script>
 	<script type="text/javascript"
 		src="webjars/angularjs/1.6.1/angular-route.js"></script>
 	<script type="text/javascript"
 		src="webjars/angularjs/1.6.1/angular-resource.js"></script>
 	<script type="text/javascript" src="js/main.js"></script>
-	<script type="text/javascript" src="js/controller.js"></script>-->
+	<script type="text/javascript" src="js/controller.js"></script>
 
 </body>
 </html>

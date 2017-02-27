@@ -1,6 +1,42 @@
-mainApp.config([ '$locationProvider', function($locationProvider) {
-	$locationProvider.hashPrefix('');
-} ]);
+//mainApp.config([ '$locationProvider', function($locationProvider) {
+//	$locationProvider.html5Mode(true).hashPrefix("");
+//} ]);
+
+
+mainApp.config(["$stateProvider", "$urlRouterProvider",'$locationProvider',
+    function($stateProvider, $urlRouterProvider,$locationProvider){
+
+	$urlRouterProvider.otherwise("/home");
+	
+	$stateProvider.state("home", {
+
+		url : "/home",
+		templateUrl : 'views/content.html',
+		controller : 'RouteController',
+
+	}).state("area", {
+
+		url : "/area/:id",
+		templateUrl : 'views/content.html',
+		controller : 'RouteController',
+		// default uri params
+		params : {
+			id : '1'
+		}
+
+	});
+	$locationProvider.html5Mode(true);
+
+}]);
+
+/*
+ * mainApp.config(function($routeProvider) { $routeProvider.when('/home', {
+ * templateUrl : 'views/content.html', controller : 'RouteController'
+ * }).when('/area/RM3-A (Floor)', { templateUrl : 'views/content.html',
+ * controller : 'RouteController' }).otherwise({ redirectTo : '/' }); });
+ */
+
+
 
 /*
  * mainApp.controller('ChartController', function($scope, $http) { $scope.config = {
@@ -86,34 +122,7 @@ var chartController = function($scope, chartService) {
 
 mainApp.controller("chartController", chartController);
 
-mainApp.config(function($stateProvider) {
 
-	$stateProvider.state("home", {
-
-		url : "/home",
-		templateUrl : 'views/content.html',
-		controller : 'RouteController',
-
-	}).state("area", {
-
-		url : "/area/:id",
-		templateUrl : 'views/content.html',
-		controller : 'RouteController',
-		// default uri params
-		params : {
-			id : '1'
-		}
-
-	})
-
-});
-
-/*
- * mainApp.config(function($routeProvider) { $routeProvider.when('/home', {
- * templateUrl : 'views/content.html', controller : 'RouteController'
- * }).when('/area/RM3-A (Floor)', { templateUrl : 'views/content.html',
- * controller : 'RouteController' }).otherwise({ redirectTo : '/' }); });
- */
 
 mainApp
 		.controller(

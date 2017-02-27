@@ -68,3 +68,27 @@ mainApp.controller('areaCtrl', function($scope, $http) {
 
 			});
 });
+
+
+mainApp.controller('dateCtrl', function($scope, $http) {
+	var $this = this;
+	
+	
+	$scope.getDate = function(Sdate, Edate) {
+		var startDate=new Date(Sdate).getTime();
+		var endDate=new Date(Edate).getTime();
+		
+		console.log("Selected Date is " + startDate + " : " + endDate)
+		console.log("http://localhost:888/energycassiot/tags/gettag/100/"+ startDate+"/"+endDate);
+
+		$http.get("http://localhost:888/energycassiot/tags/gettag/100/"+ startDate+"/"+endDate).then(function(response) {
+			$scope.SelectedData = response.data;// response data
+
+		}, function(error) {
+			alert('Error!');
+		});
+
+	};
+});
+
+
