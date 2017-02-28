@@ -13,6 +13,6 @@ public class HomeController {
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String hellopage() {
 		System.out.println("Hi Welcome");
-		return "index";
+		return "home";
 	}
 }

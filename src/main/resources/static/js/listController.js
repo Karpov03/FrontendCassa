@@ -3,31 +3,53 @@
 //} ]);
 
 
-mainApp.config(["$stateProvider", "$urlRouterProvider",'$locationProvider',
-    function($stateProvider, $urlRouterProvider,$locationProvider){
-
-	$urlRouterProvider.otherwise("/home");
+mainApp.controller('dateCtrl', function ($scope) {
 	
-	$stateProvider.state("home", {
+	
+	//$scope.myDateRange
+	//$scope.myDateRange= {startDate: "2016-06-05T18:30:00.000Z", endDate: "2017-02-12T18:29:59.999Z"};
 
-		url : "/home",
-		templateUrl : 'views/content.html',
-		controller : 'RouteController',
+	$scope.getDate = function(sDate,eDate) {
+		
+		var startDate=new Date(sDate).getTime();
+		var endDate=new Date(eDate).getTime();
+		
+		console.log("Selected Date is " + startDate + " : " + endDate)
 
-	}).state("area", {
+	
+		
+	}
+	
+	
+	  //  $scope.datePicker.date = {startDate: null, endDate: null};
+	
+});
 
-		url : "/area/:id",
-		templateUrl : 'views/content.html',
-		controller : 'RouteController',
-		// default uri params
-		params : {
-			id : '1'
-		}
+mainApp.config([ "$stateProvider", "$urlRouterProvider", '$locationProvider',
+		function($stateProvider, $urlRouterProvider, $locationProvider) {
 
-	});
-	$locationProvider.html5Mode(true);
+			$urlRouterProvider.otherwise("/home");
 
-}]);
+			$stateProvider.state("home", {
+
+				url : "/home",
+				templateUrl : 'views/content.html',
+				controller : 'RouteController',
+
+			}).state("area", {
+
+				url : "/area/:id",
+				templateUrl : 'views/content.html',
+				controller : 'RouteController',
+				// default uri params
+				params : {
+					id : '1'
+				}
+
+			});
+			$locationProvider.html5Mode(true);
+
+		} ]);
 
 /*
  * mainApp.config(function($routeProvider) { $routeProvider.when('/home', {
@@ -35,8 +57,6 @@ mainApp.config(["$stateProvider", "$urlRouterProvider",'$locationProvider',
  * }).when('/area/RM3-A (Floor)', { templateUrl : 'views/content.html',
  * controller : 'RouteController' }).otherwise({ redirectTo : '/' }); });
  */
-
-
 
 /*
  * mainApp.controller('ChartController', function($scope, $http) { $scope.config = {
@@ -78,21 +98,29 @@ var chartController = function($scope, chartService) {
 	// $scope.series = [ 'Series A', 'Series B' ];
 
 	$scope.data = [];
+	$scope.colors = [ '#35A2CB', '#97D34E', '#B6A2DF', '#2EC8CA', '#35A2CB', '#2EC8CA', '#97D34E'];
 
-	$scope.colors = [ {
-		fillColor : 'rgba(40,0,40, 1)',
-		strokeColor : 'rgba(0,40,0, 0.8)',
-		highlightFill : 'rgba(40,0,0, 0.8)',
-		highlightStroke : 'rgba(0,40,40, 0.8)'
-	} ];
-
+	// $scope.colors = [ {
+	// fillColor : 'rgba(80,80,80, 0.3)',
+	// strokeColor : 'rgba(0,20,0, 0.8)',
+	// highlightFill : 'rgba(40,0,0, 0.8)',
+	// highlightStroke : 'rgba(0,40,40, 0.8)'
+	// } ];
+	//
 	$scope.datasetOverride = [ {
-		label : "Bar chart",
+		// label : "Bar chart",
+		// //borderWidth : 3,
+		// hoverBackgroundColor : "rgba(255,99,132,0.9)",
+		// hoverBorderColor : "rgba(255,99,132,1)",
+		// backgroundColor : "rgba(0,40,40,0.2)",
+		// type : 'line',
+
+		label : "Line chart",
 		borderWidth : 3,
 		hoverBackgroundColor : "rgba(255,99,132,0.4)",
 		hoverBorderColor : "rgba(255,99,132,1)",
-		backgroundColor : "rgba(0,80,80,0.4)",
-		type : 'bar',
+		backgroundColor : "rgba(46,200,202,0.4)",
+		type : 'line'
 
 	} ];
 
@@ -121,8 +149,6 @@ var chartController = function($scope, chartService) {
 };
 
 mainApp.controller("chartController", chartController);
-
-
 
 mainApp
 		.controller(

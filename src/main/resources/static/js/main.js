@@ -1,4 +1,4 @@
-var mainApp = angular.module("mainApp", [ 'ngRoute' ]);
+var mainApp = angular.module("mainApp", [ 'ngRoute','angularCharts' ]);
 
 mainApp.config([ '$locationProvider', function($locationProvider) {
 	$locationProvider.hashPrefix('');
@@ -54,21 +54,6 @@ var UsersController = function($scope, userRepoService) {
 
 mainApp.controller("UsersController", UsersController);
 
-mainApp.controller('siteCtrl', function($scope, $http) {
-	$http.get("http://localhost:999/MegatechEnterprise/site/getSite").then(
-			function(response) {
-				$scope.sites = response.data; // response data
-
-			});
-});
-mainApp.controller('areaCtrl', function($scope, $http) {
-	$http.get("http://localhost:999/MegatechEnterprise/area/getArea").then(
-			function(response) {
-				$scope.areas = response.data; // response data
-
-			});
-});
-
 
 mainApp.controller('dateCtrl', function($scope, $http) {
 	var $this = this;
@@ -90,5 +75,39 @@ mainApp.controller('dateCtrl', function($scope, $http) {
 
 	};
 });
+
+
+
+mainApp.controller('ChartController', function($scope, $http) { 
+	$scope.config = {
+ title : 'Products',
+ tooltips : true, 
+ labels : true, 
+ mouseover : function() { },
+ mouseout : function() { }, 
+ click : function() { }, 
+ legend : {
+	 display : true, // could be 'left, right' position : 'right' 
+ }
+	}
+ 
+ var chdata = $http.get( "https://megatechenterprise.mybluemix.net/site/getSite").then(
+ function(response) 
+ { return response.data.value; // response data
+ },
+ function(error) { alert('Error!'); });
+ 
+ $scope.data = { 
+		 series : [ 'Sales', 'Income', 'Expense', 'Laptops', 'Keyboards' ], 
+		 data : [
+			 { x : "Laptops", y : [ 200, 300 ] }, 
+			 { x : "Desktops", y : [ 300, 100, 100 ] },
+			 { x : "Mobiles", y : [ 351 ] },
+			 { x : "Tablets", y : [ 54, 0, 879 ] } 
+			 ] };
+ 
+});
+ 
+
 
 
