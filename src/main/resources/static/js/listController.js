@@ -175,7 +175,7 @@ mainApp
 var ListController = function($scope, $http) {
 
 	var $this = this;
-	$http.get("https://megatechenterprise.mybluemix.net/site/getSite").then(
+	$http.get("https://megatechenterprise.mybluemix.net/site/list").then(
 			function(response) {
 				$this.SiteList = response.data; // response data
 

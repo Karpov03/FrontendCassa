@@ -20,7 +20,7 @@ var userRepoService = function($http) {
 
 	var getUsers = function(username) {
 		return $http
-				.get("http://localhost:999/MegatechEnterprise/site/getSite")
+				.get("https://megatechenterprise.mybluemix.net/site/list")
 				.then(function(response) {
 					return response.data;
 				});
@@ -65,6 +65,9 @@ mainApp.controller('dateCtrl', function($scope, $http) {
 		
 		console.log("Selected Date is " + startDate + " : " + endDate)
 		console.log("http://localhost:888/energycassiot/tags/gettag/100/"+ startDate+"/"+endDate);
+		
+		
+		
 
 		$http.get("http://localhost:888/energycassiot/tags/gettag/100/"+ startDate+"/"+endDate).then(function(response) {
 			$scope.SelectedData = response.data;// response data
@@ -91,7 +94,7 @@ mainApp.controller('ChartController', function($scope, $http) {
  }
 	}
  
- var chdata = $http.get( "https://megatechenterprise.mybluemix.net/site/getSite").then(
+ var chdata = $http.get( "https://megatechenterprise.mybluemix.net/site/list").then(
  function(response) 
  { return response.data.value; // response data
  },
