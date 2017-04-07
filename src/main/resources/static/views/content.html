@@ -104,7 +104,7 @@
 								<div class="description-block">
 									<h3 class="bignumber" data-ng-repeat="site in ClickedList"
 										data-ng-if="site.tagid == 100">
-										{{ site.value }} <span class="smalltag"><br> KWH</span>
+										{{ site[0].value }} <span class="smalltag"><br> KWH</span>
 									</h3>
 									<div class="progress sm">
 										<div class="progress-bar progress-bar-aqua"
@@ -127,7 +127,7 @@
 								<div class="description-block">
 									<h3 class="bignumber" data-ng-repeat="site in ClickedList"
 										data-ng-if="site.tagid == 101">
-										{{ site.value }}<span class="smalltag"><br> %</span>
+										{{ site.value}}<span class="smalltag"><br> %</span>
 									</h3>
 									<div class="progress sm">
 										<div class="progress-bar progress-bar-red" style="width: 73%"></div>
