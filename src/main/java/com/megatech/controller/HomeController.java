@@ -16,7 +16,7 @@ public class HomeController {
 		return "login";
 	}
 	
-	@RequestMapping(value ={"/home"}, method = RequestMethod.GET)
+	@RequestMapping(value ={"/home","/area/*"}, method = RequestMethod.GET)
 	public String hellopage() {
 		System.out.println("Hi Welcome to Index Page");
 		return "home";
