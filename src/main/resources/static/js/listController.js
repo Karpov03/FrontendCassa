@@ -36,6 +36,12 @@ mainApp.config([ "$stateProvider", "$urlRouterProvider", '$locationProvider',
 				templateUrl : 'views/content.html',
 				controller : 'RouteController',
 
+			}).state("login", {
+
+				url : "/login",
+				templateUrl : 'login.html',
+				controller : 'RouteController',
+
 			}).state("area", {
 
 				url : "/area/:id",
@@ -77,9 +83,12 @@ mainApp.config([ "$stateProvider", "$urlRouterProvider", '$locationProvider',
 
 var chartService = function($http) {
 
+	
+//	https://energyiotcassandra.mybluemix.net/tags/gettimedata
+	
 	var getDatas = function() {
 		return $http.get(
-				"https://energyiotcassandra.mybluemix.net/tags/gettimedata")
+				"https://megaenergyiotbackend.mybluemix.net/tags/gettag/15")
 				.then(function(response) {
 					return response.data;
 				});
@@ -94,7 +103,7 @@ var chartService = function($http) {
 mainApp.factory("chartService", chartService);
 var chartController = function($scope, chartService) {
 
-	$scope.labels = [];
+	$scope.labels = ['15','16','17','18','19','20','21','22','23','24'];
 	// $scope.series = [ 'Series A', 'Series B' ];
 
 	$scope.data = [];
@@ -133,7 +142,7 @@ var chartController = function($scope, chartService) {
 		console.log("Hello" + data);
 
 		angular.forEach(data, function(data) {
-			$scope.labels.push(data.tagid);
+			//$scope.labels.push(data.tagid);
 			$scope.data.push(data.value);
 
 		});
@@ -157,30 +166,99 @@ mainApp
 						'$scope',
 						'$http',
 						'$stateParams',
-						function($scope, $http, $stateParams) {
+						function($scope, $http, $stateParams)
+						{
 							// Make an AJAX call, retrieving the state.
 
-							$http
-									.get(
-											"https://energyiotcassandra.mybluemix.net/tags/gettimedata")
-									.then(function(response) {
-										$scope.ClickedList = response.data;// response
+							$http.get("https://megaenergyiotbackend.mybluemix.net/tags/getlist")
+									.then(function(response) 
+									{
+										$scope.ClickedList1 = response.data;// response
 										// data
 
-									}, function(error) {
-										alert('Error!');
+									}, function(error)
+									{
+										//alert('Error!');
 									});
-						} ]);
+							
+							
+							$scope.gettag15 = function() {
+						          $http.get("https://megaenergyiotbackend.mybluemix.net/tags/gettag/15").then(function(response) {
+									$scope.tagValue15 = response.data;// response data
+
+								}, function(error) {
+									//alert('Error!');
+								});
+
+							};
+							$scope.gettag16 = function() {
+						          $http.get("https://megaenergyiotbackend.mybluemix.net/tags/gettag/16").then(function(response) {
+									$scope.tagValue16 = response.data;// response data
+
+								}, function(error) {
+									//alert('Error!');
+								});
+
+							};
+							$scope.gettag17 = function() {
+						          $http.get("https://megaenergyiotbackend.mybluemix.net/tags/gettag/17").then(function(response) {
+									$scope.tagValue17 = response.data;// response data
+
+								}, function(error) {
+									//alert('Error!');
+								});
+
+							};
+							$scope.gettag18 = function() {
+						          $http.get("https://megaenergyiotbackend.mybluemix.net/tags/gettag/18").then(function(response) {
+									$scope.tagValue18 = response.data;// response data
+
+								}, function(error) {
+									//alert('Error!');
+								});
+
+							};
+							$scope.gettag19 = function() {
+						          $http.get("https://megaenergyiotbackend.mybluemix.net/tags/gettag/19").then(function(response) {
+									$scope.tagValue19 = response.data;// response data
+
+								}, function(error) {
+									//alert('Error!');
+								});
+
+							};
+							$scope.gettag20 = function() {
+						          $http.get("https://megaenergyiotbackend.mybluemix.net/tags/gettag/20").then(function(response) {
+									$scope.tagValue20 = response.data;// response data
+
+								}, function(error) {
+									//alert('Error!');
+								});
+
+							};
+							
+							
+							
+							
+							
+							
+						}
+						
+						
+						
+						
+						
+				]);
 
 var ListController = function($scope, $http) {
 
 	var $this = this;
-	$http.get("https://megatechenterprise.mybluemix.net/site/list").then(
+	$http.get("https://megatechadmin.mybluemix.net/site/list").then(
 			function(response) {
 				$this.SiteList = response.data; // response data
 
 			}, function(error) {
-				alert('Error!');
+				//alert('Error!');
 			});
 
 	$this.doSomething = function(clickedId, nameId) {
@@ -190,12 +268,12 @@ var ListController = function($scope, $http) {
 		console.log("Clicked Id is " + clickedId + " : " + nameId)
 
 		$http.get(
-				"https://energyiotcassandra.mybluemix.net/tags/gettag/10"
+				"https://megaenergyiotbackend.mybluemix.net/tags/gettag/1"
 						+ clickedId).then(function(response) {
 			$this.ClickedList = response.data;// response data
 
 		}, function(error) {
-			alert('Error!');
+			//alert('Error!');
 		});
 
 	};

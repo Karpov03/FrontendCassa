@@ -1,0 +1,214 @@
+body {
+	font-family: LondonMM;
+}
+form {
+margin: 1em auto;
+	padding: 1em 1em 1em 1em;
+}
+.group {
+	position: relative;
+	margin-bottom: 45px;
+	font-size: 20px;
+}
+input {
+	font-size: 18px;
+	text-align: center;
+	font-weight: bold;
+	padding: 10px 10px 10px 5px;
+	-webkit-appearance: none;
+	display: block;
+	background: none;
+	color: #fff;
+	width: 100%;
+	border: none;
+	border-radius: 0;
+	border-bottom: 1px solid #fff;
+}
+input:focus {
+	outline: none;
+}
+/* Label */
+
+label {
+	color: #fff;
+	text-align: center;
+	font-size: 18px;
+	font-weight: normal;
+	position: absolute;
+	pointer-events: none;
+	left: 5px;
+	top: 10px;
+	transition: all 0.2s ease;
+}
+/* active */
+
+input:focus ~ label, input.used ~ label {
+	top: -20px;
+	transform: scale(.75);
+	left: -2px;
+	/* font-size: 14px; */
+	color: #fff;
+}
+/* Underline */
+
+.bar {
+	position: relative;
+	display: block;
+	width: 100%;
+}
+.bar:before, .bar:after {
+	content: '';
+	height: 2px;
+	width: 0;
+	bottom: 1px;
+	position: absolute;
+	background: #fff;
+	transition: all 0.2s ease;
+}
+.bar:before {
+	left: 50%;
+}
+.bar:after {
+	right: 50%;
+}
+/* active */
+
+input:focus ~ .bar:before, input:focus ~ .bar:after {
+	width: 50%;
+}
+/* Highlight */
+
+.highlight {
+	position: absolute;
+	height: 60%;
+	width: 100px;
+	top: 25%;
+	left: 0;
+	pointer-events: none;
+	opacity: 0.5;
+}
+/* active */
+
+input:focus ~ .highlight {
+	animation: inputHighlighter 0.3s ease;
+}
+
+
+/* Animations */
+
+@keyframes inputHighlighter {
+ from {
+background: #fff;
+}
+ to {
+width: 0;
+background: transparent;
+}
+}
+/* Button */
+
+.button {
+	position: relative;
+	display: inline-block;
+	padding: 12px 24px;
+	margin: .3em 0 1em 0;
+	width: 100%;
+	vertical-align: middle;
+	color: #fff;
+	font-size: 16px;
+	line-height: 20px;
+	-webkit-font-smoothing: antialiased;
+	text-align: center;
+	letter-spacing: 1px;
+	background: transparent;
+	border: 0;
+	border-bottom: 2px solid #3160B6;
+	cursor: pointer;
+	transition: all 0.15s ease;
+}
+.button:focus {
+	outline: 0;
+}
+/* Button modifiers */
+
+.buttonBlue {
+	background: #fff;
+	border-radius: 8px;
+	text-shadow: 1px 1px 0 rgba(39, 110, 204, .5);
+	color: black;
+	font-family: LondonMM;
+	width: 280px;
+	font-size: 22px;
+}
+.buttonBlue:hover {
+	background: #1b4874;
+	color: #FFFFFF;
+}
+/* Ripples container */
+
+.ripples {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	background: transparent;
+}
+/* Ripples circle */
+
+.ripplesCircle {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	opacity: 0;
+	width: 0;
+	height: 0;
+	border-radius: 50%;
+	background: rgba(255, 255, 255, 0.25);
+}
+.ripples.is-active .ripplesCircle {
+	animation: ripples .4s ease-in;
+}
+
+
+/* Ripples animation */
+
+@keyframes ripples {
+ 0% {
+opacity: 0;
+}
+ 25% {
+opacity: 1;
+}
+ 100% {
+ width: 200%;
+ padding-bottom: 200%;
+ opacity: 0;
+}
+}
+#footer {
+	background: #1b4874;
+	width: 100%;
+	height: 50px;
+	position: absolute;
+	bottom: 0;
+	font-family: LondonMM;
+	left: 0;
+}
+.knowmore {
+	font-family: LondonMM;
+	font-size: 15px;
+	font-weight: 700;
+	text-align: center;
+	color: #fff;
+	padding-top: 6px;
+}
+	@media (min-width: 768px) {
+    .login-logo {
+      padding-top:35%;
+		}
+    }
+
+	

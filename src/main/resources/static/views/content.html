@@ -78,7 +78,8 @@
 									<!-- DateRange Picker -->
 									<input data-type="daterange" class="form-control pull-right"
 										data-ng-model="myDateRange" /> <span class="input-group-btn">
-										<button type="button" class="btn btn-info btn-flat" data-ng-click="getDate(myDateRange.startDate,myDateRange.endDate)">
+										<button type="button" class="btn btn-info btn-flat"
+											data-ng-click="getDate(myDateRange.startDate,myDateRange.endDate)">
 											<b>Go</b>
 										</button>
 									</span>
@@ -102,9 +103,10 @@
 						<div class="row">
 							<div class="col-sm-12">
 								<div class="description-block">
-									<h3 class="bignumber" data-ng-repeat="site in ClickedList"
-										data-ng-if="site.tagid == 100">
-										{{ site[0].value }} <span class="smalltag"><br> KWH</span>
+									<h3 class="bignumber" data-ng-init="gettag15()">
+
+										{{tagValue15[0].value}}<span class="smalltag"><br>
+											KWH</span>
 									</h3>
 									<div class="progress sm">
 										<div class="progress-bar progress-bar-aqua"
@@ -125,9 +127,10 @@
 						<div class="row">
 							<div class="col-sm-12">
 								<div class="description-block">
-									<h3 class="bignumber" data-ng-repeat="site in ClickedList"
-										data-ng-if="site.tagid == 101">
-										{{ site.value}}<span class="smalltag"><br> %</span>
+									<h3 class="bignumber" data-ng-init="gettag16()">
+
+										{{tagValue16[0].value}}<span class="smalltag"><br>
+											%</span>
 									</h3>
 									<div class="progress sm">
 										<div class="progress-bar progress-bar-red" style="width: 73%"></div>
@@ -147,9 +150,10 @@
 						<div class="row">
 							<div class="col-sm-12">
 								<div class="description-block">
-									<h3 class="bignumber" data-ng-repeat="site in ClickedList"
-										data-ng-if="site.tagid == 107">
-										{{ site.value }}<span class="smalltag"><br> KWH</span>
+									<h3 class="bignumber" data-ng-init="gettag17()">
+
+										{{tagValue17[0].value}}<span class="smalltag"><br>
+											KWH</span>
 									</h3>
 									<div class="progress sm">
 										<div class="progress-bar progress-bar-green"
@@ -170,9 +174,10 @@
 						<div class="row">
 							<div class="col-sm-12">
 								<div class="description-block">
-									<h3 class="bignumber" data-ng-repeat="site in ClickedList"
-										data-ng-if="site.tagid == 102">
-										{{ site.value }} <span class="smalltag"><br> %</span>
+									<h3 class="bignumber" data-ng-init="gettag18()">
+
+										{{tagValue18[0].value}}<span class="smalltag"><br>
+											%</span>
 									</h3>
 									<div class="progress sm">
 										<div class="progress-bar progress-bar-yellow"
@@ -193,9 +198,10 @@
 						<div class="row">
 							<div class="col-sm-12">
 								<div class="description-block">
-									<h3 class="bignumber" data-ng-repeat="site in ClickedList"
-										data-ng-if="site.tagid == 104">
-										{{ site.value }}<span class="smalltag"><br> KWH</span>
+									<h3 class="bignumber" data-ng-init="gettag19()">
+
+										{{tagValue19[0].value}}<span class="smalltag"><br>
+											KWH</span>
 									</h3>
 									<div class="progress sm">
 										<div class="progress-bar progress-bar-green"
@@ -216,9 +222,10 @@
 						<div class="row">
 							<div class="col-sm-12">
 								<div class="description-block">
-									<h3 class="bignumber" data-ng-repeat="site in ClickedList"
-										data-ng-if="site.tagid == 105">
-										{{ site.value }}<span class="smalltag"><br> KWH</span>
+									<h3 class="bignumber" data-ng-init="gettag20()">
+
+										{{tagValue20[0].value}}<span class="smalltag"><br>
+											KWH</span>
 									</h3>
 									<div class="progress sm">
 										<div class="progress-bar progress-bar-yellow"

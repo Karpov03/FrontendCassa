@@ -10,9 +10,15 @@ import org.springframework.web.bind.annotation.RequestMethod;
 public class HomeController {
 
 
-	@RequestMapping(value = "/", method = RequestMethod.GET)
+	@RequestMapping(value ={ "/","/login"}, method = RequestMethod.GET)
+	public String loginpage() {
+		System.out.println("Hi Welcome To Login Page");
+		return "login";
+	}
+	
+	@RequestMapping(value ={"/home"}, method = RequestMethod.GET)
 	public String hellopage() {
-		System.out.println("Hi Welcome");
+		System.out.println("Hi Welcome to Index Page");
 		return "home";
 	}
 }
