@@ -16,9 +16,7 @@ mainApp.controller('dateCtrl', function ($scope) {
 		
 		console.log("Selected Date is " + startDate + " : " + endDate)
 
-	
-		
-	}
+		}
 	
 	
 	  //  $scope.datePicker.date = {startDate: null, endDate: null};
@@ -164,9 +162,9 @@ mainApp
 				'RouteController',
 				[
 						'$scope',
-						'$http',
+						'$http','$rootScope',
 						'$stateParams',
-						function($scope, $http, $stateParams)
+						function($scope, $http,$rootScope, $stateParams)
 						{
 							// Make an AJAX call, retrieving the state.
 
@@ -181,56 +179,75 @@ mainApp
 										//alert('Error!');
 									});
 							
-							
-							$scope.gettag15 = function() {
-						          $http.get("https://megaenergyiotbackend.mybluemix.net/tags/gettag/15").then(function(response) {
-									$scope.tagValue15 = response.data;// response data
-
-								}, function(error) {
+							$scope.getDate = function(sDate,eDate) {
+								
+								var startDate=new Date(sDate).getTime();
+								var endDate=new Date(eDate).getTime();
+								
+								console.log("Selected Date is " + startDate + " : " + endDate)
+								
+								var gettag15 = function() {	
+									{
+							          $http.get("http://localhost:888/energycassiot/logics/avg/15/"+ startDate + " / " + endDate).then(function(response) {
+										$scope.tagValue15 = response.data;// response data
+										console.log("Hello:");
+									}, function(error) {
+									
 									//alert('Error!');
-								});
+										
+									});
+									
+									}
+									}
 
-							};
+								}
+							
+									
+							
+							$scope.gettag15 = function()
+							{
+								gettag15();
+							}
+						
 							$scope.gettag16 = function() {
-						          $http.get("https://megaenergyiotbackend.mybluemix.net/tags/gettag/16").then(function(response) {
-									$scope.tagValue16 = response.data;// response data
-
+								 $http.get("http://localhost:888/energycassiot/logics/avg/16").then(function(response) {
+										$scope.tagValue16 = response.data;// response data
+										$scope.tagValue16=$scope.tagValue16/10
 								}, function(error) {
 									//alert('Error!');
 								});
 
 							};
 							$scope.gettag17 = function() {
-						          $http.get("https://megaenergyiotbackend.mybluemix.net/tags/gettag/17").then(function(response) {
-									$scope.tagValue17 = response.data;// response data
-
+								 $http.get("http://localhost:888/energycassiot/logics/avg/17").then(function(response) {
+										$scope.tagValue17 = response.data;// response data
 								}, function(error) {
 									//alert('Error!');
 								});
 
 							};
 							$scope.gettag18 = function() {
-						          $http.get("https://megaenergyiotbackend.mybluemix.net/tags/gettag/18").then(function(response) {
-									$scope.tagValue18 = response.data;// response data
-
+								 $http.get("http://localhost:888/energycassiot/logics/avg/18").then(function(response) {
+										$scope.tagValue18 = response.data;// response data
+										$scope.tagValue18=$scope.tagValue18/10
+							
 								}, function(error) {
 									//alert('Error!');
 								});
 
 							};
 							$scope.gettag19 = function() {
-						          $http.get("https://megaenergyiotbackend.mybluemix.net/tags/gettag/19").then(function(response) {
-									$scope.tagValue19 = response.data;// response data
-
-								}, function(error) {
+								 $http.get("http://localhost:888/energycassiot/logics/avg/19").then(function(response) {
+										$scope.tagValue19 = response.data;// response data
+											}, function(error) {
 									//alert('Error!');
 								});
 
 							};
 							$scope.gettag20 = function() {
-						          $http.get("https://megaenergyiotbackend.mybluemix.net/tags/gettag/20").then(function(response) {
-									$scope.tagValue20 = response.data;// response data
-
+								 $http.get("http://localhost:888/energycassiot/logics/avg/20").then(function(response) {
+										$scope.tagValue20 = response.data;// response data
+										
 								}, function(error) {
 									//alert('Error!');
 								});
