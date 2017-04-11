@@ -186,28 +186,21 @@ mainApp
 								
 								console.log("Selected Date is " + startDate + " : " + endDate)
 								
-								var gettag15 = function() {	
-									{
-							          $http.get("http://localhost:888/energycassiot/logics/avg/15/"+ startDate + " / " + endDate).then(function(response) {
-										$scope.tagValue15 = response.data;// response data
-										console.log("Hello:");
-									}, function(error) {
-									
-									//alert('Error!');
-										
-									});
-									
-									}
-									}
+								
 
 								}
 							
 									
 							
-							$scope.gettag15 = function()
-							{
-								gettag15();
-							}
+							$scope.gettag15 = function() {
+								 $http.get("http://localhost:888/energycassiot/logics/avg/15").then(function(response) {
+										$scope.tagValue15 = response.data;// response data
+										
+								}, function(error) {
+									//alert('Error!');
+								});
+
+							};
 						
 							$scope.gettag16 = function() {
 								 $http.get("http://localhost:888/energycassiot/logics/avg/16").then(function(response) {
