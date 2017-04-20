@@ -1,0 +1,703 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'C:\\Program Files\\nodejs\\node.exe',
+1 verbose cli   'C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js',
+1 verbose cli   'install',
+1 verbose cli   'angular-nvd3' ]
+2 info using npm@3.10.10
+3 info using node@v6.9.4
+4 silly loadCurrentTree Starting
+5 silly install loadCurrentTree
+6 silly install readLocalPackageData
+7 silly fetchPackageMetaData angular-nvd3
+8 silly fetchNamedPackageData angular-nvd3
+9 silly mapToRegistry name angular-nvd3
+10 silly mapToRegistry using default registry
+11 silly mapToRegistry registry https://registry.npmjs.org/
+12 silly mapToRegistry data Result {
+12 silly mapToRegistry   raw: 'angular-nvd3',
+12 silly mapToRegistry   scope: null,
+12 silly mapToRegistry   escapedName: 'angular-nvd3',
+12 silly mapToRegistry   name: 'angular-nvd3',
+12 silly mapToRegistry   rawSpec: '',
+12 silly mapToRegistry   spec: 'latest',
+12 silly mapToRegistry   type: 'tag' }
+13 silly mapToRegistry uri https://registry.npmjs.org/angular-nvd3
+14 verbose request uri https://registry.npmjs.org/angular-nvd3
+15 verbose request no auth needed
+16 info attempt registry request try #1 at 11:27:07 PM
+17 verbose request id 2723ec42def9e70e
+18 http request GET https://registry.npmjs.org/angular-nvd3
+19 http 200 https://registry.npmjs.org/angular-nvd3
+20 verbose headers { server: 'nginx/1.4.6 (Ubuntu)',
+20 verbose headers   'content-type': 'application/json',
+20 verbose headers   'last-modified': 'Wed, 17 Aug 2016 21:30:18 GMT',
+20 verbose headers   'content-encoding': 'gzip',
+20 verbose headers   'cache-control': 'max-age=300',
+20 verbose headers   'content-length': '5131',
+20 verbose headers   'accept-ranges': 'bytes',
+20 verbose headers   date: 'Sat, 15 Apr 2017 17:57:23 GMT',
+20 verbose headers   via: '1.1 varnish',
+20 verbose headers   age: '0',
+20 verbose headers   connection: 'keep-alive',
+20 verbose headers   'x-served-by': 'cache-sin18021-SIN',
+20 verbose headers   'x-cache': 'MISS',
+20 verbose headers   'x-cache-hits': '0',
+20 verbose headers   'x-timer': 'S1492279043.214725,VS0,VE99',
+20 verbose headers   vary: 'Accept-Encoding' }
+21 silly get cb [ 200,
+21 silly get   { server: 'nginx/1.4.6 (Ubuntu)',
+21 silly get     'content-type': 'application/json',
+21 silly get     'last-modified': 'Wed, 17 Aug 2016 21:30:18 GMT',
+21 silly get     'content-encoding': 'gzip',
+21 silly get     'cache-control': 'max-age=300',
+21 silly get     'content-length': '5131',
+21 silly get     'accept-ranges': 'bytes',
+21 silly get     date: 'Sat, 15 Apr 2017 17:57:23 GMT',
+21 silly get     via: '1.1 varnish',
+21 silly get     age: '0',
+21 silly get     connection: 'keep-alive',
+21 silly get     'x-served-by': 'cache-sin18021-SIN',
+21 silly get     'x-cache': 'MISS',
+21 silly get     'x-cache-hits': '0',
+21 silly get     'x-timer': 'S1492279043.214725,VS0,VE99',
+21 silly get     vary: 'Accept-Encoding' } ]
+22 verbose get saving angular-nvd3 to C:\Users\Gowri\AppData\Roaming\npm-cache\registry.npmjs.org\angular-nvd3\.cache.json
+23 verbose correctMkdir C:\Users\Gowri\AppData\Roaming\npm-cache correctMkdir not in flight; initializing
+24 silly install normalizeTree
+25 silly loadCurrentTree Finishing
+26 silly loadIdealTree Starting
+27 silly install loadIdealTree
+28 silly cloneCurrentTree Starting
+29 silly install cloneCurrentTreeToIdealTree
+30 silly cloneCurrentTree Finishing
+31 silly loadShrinkwrap Starting
+32 silly install loadShrinkwrap
+33 silly loadShrinkwrap Finishing
+34 silly loadAllDepsIntoIdealTree Starting
+35 silly install loadAllDepsIntoIdealTree
+36 silly resolveWithNewModule angular-nvd3@1.0.9 checking installable status
+37 silly cache add args [ 'angular-nvd3', null ]
+38 verbose cache add spec angular-nvd3
+39 silly cache add parsed spec Result {
+39 silly cache add   raw: 'angular-nvd3',
+39 silly cache add   scope: null,
+39 silly cache add   escapedName: 'angular-nvd3',
+39 silly cache add   name: 'angular-nvd3',
+39 silly cache add   rawSpec: '',
+39 silly cache add   spec: 'latest',
+39 silly cache add   type: 'tag' }
+40 silly addNamed angular-nvd3@latest
+41 verbose addNamed "latest" is being treated as a dist-tag for angular-nvd3
+42 info addNameTag [ 'angular-nvd3', 'latest' ]
+43 silly mapToRegistry name angular-nvd3
+44 silly mapToRegistry using default registry
+45 silly mapToRegistry registry https://registry.npmjs.org/
+46 silly mapToRegistry data Result {
+46 silly mapToRegistry   raw: 'angular-nvd3',
+46 silly mapToRegistry   scope: null,
+46 silly mapToRegistry   escapedName: 'angular-nvd3',
+46 silly mapToRegistry   name: 'angular-nvd3',
+46 silly mapToRegistry   rawSpec: '',
+46 silly mapToRegistry   spec: 'latest',
+46 silly mapToRegistry   type: 'tag' }
+47 silly mapToRegistry uri https://registry.npmjs.org/angular-nvd3
+48 verbose addNameTag registry:https://registry.npmjs.org/angular-nvd3 not in flight; fetching
+49 verbose get https://registry.npmjs.org/angular-nvd3 not expired, no request
+50 silly addNameTag next cb for angular-nvd3 with tag latest
+51 silly addNamed angular-nvd3@1.0.9
+52 verbose addNamed "1.0.9" is a plain semver version for angular-nvd3
+53 silly mapToRegistry name angular-nvd3
+54 silly mapToRegistry using default registry
+55 silly mapToRegistry registry https://registry.npmjs.org/
+56 silly mapToRegistry data Result {
+56 silly mapToRegistry   raw: 'angular-nvd3',
+56 silly mapToRegistry   scope: null,
+56 silly mapToRegistry   escapedName: 'angular-nvd3',
+56 silly mapToRegistry   name: 'angular-nvd3',
+56 silly mapToRegistry   rawSpec: '',
+56 silly mapToRegistry   spec: 'latest',
+56 silly mapToRegistry   type: 'tag' }
+57 silly mapToRegistry uri https://registry.npmjs.org/angular-nvd3
+58 verbose addRemoteTarball https://registry.npmjs.org/angular-nvd3/-/angular-nvd3-1.0.9.tgz not in flight; adding
+59 verbose addRemoteTarball [ 'https://registry.npmjs.org/angular-nvd3/-/angular-nvd3-1.0.9.tgz',
+59 verbose addRemoteTarball   '8d8a71487d9e5a122e8a5d0f5cd26ab0e491a6f5' ]
+60 info retry fetch attempt 1 at 11:27:23 PM
+61 info attempt registry request try #1 at 11:27:23 PM
+62 http fetch GET https://registry.npmjs.org/angular-nvd3/-/angular-nvd3-1.0.9.tgz
+63 http fetch 200 https://registry.npmjs.org/angular-nvd3/-/angular-nvd3-1.0.9.tgz
+64 silly fetchAndShaCheck shasum 8d8a71487d9e5a122e8a5d0f5cd26ab0e491a6f5
+65 verbose addTmpTarball C:\Users\Gowri\AppData\Local\Temp\npm-2476-eabbf4b0\registry.npmjs.org\angular-nvd3\-\angular-nvd3-1.0.9.tgz not in flight; adding
+66 verbose addTmpTarball already have metadata; skipping unpack for angular-nvd3@1.0.9
+67 verbose correctMkdir C:\Users\Gowri\AppData\Roaming\npm-cache correctMkdir not in flight; initializing
+68 silly cache afterAdd angular-nvd3@1.0.9
+69 verbose afterAdd C:\Users\Gowri\AppData\Roaming\npm-cache\angular-nvd3\1.0.9\package\package.json not in flight; writing
+70 verbose correctMkdir C:\Users\Gowri\AppData\Roaming\npm-cache correctMkdir not in flight; initializing
+71 verbose afterAdd C:\Users\Gowri\AppData\Roaming\npm-cache\angular-nvd3\1.0.9\package\package.json written
+72 silly fetchNamedPackageData angular
+73 silly mapToRegistry name angular
+74 silly mapToRegistry using default registry
+75 silly mapToRegistry registry https://registry.npmjs.org/
+76 silly mapToRegistry data Result {
+76 silly mapToRegistry   raw: 'angular',
+76 silly mapToRegistry   scope: null,
+76 silly mapToRegistry   escapedName: 'angular',
+76 silly mapToRegistry   name: 'angular',
+76 silly mapToRegistry   rawSpec: '',
+76 silly mapToRegistry   spec: 'latest',
+76 silly mapToRegistry   type: 'tag' }
+77 silly mapToRegistry uri https://registry.npmjs.org/angular
+78 silly fetchNamedPackageData d3
+79 silly mapToRegistry name d3
+80 silly mapToRegistry using default registry
+81 silly mapToRegistry registry https://registry.npmjs.org/
+82 silly mapToRegistry data Result {
+82 silly mapToRegistry   raw: 'd3',
+82 silly mapToRegistry   scope: null,
+82 silly mapToRegistry   escapedName: 'd3',
+82 silly mapToRegistry   name: 'd3',
+82 silly mapToRegistry   rawSpec: '',
+82 silly mapToRegistry   spec: 'latest',
+82 silly mapToRegistry   type: 'tag' }
+83 silly mapToRegistry uri https://registry.npmjs.org/d3
+84 silly fetchNamedPackageData nvd3
+85 silly mapToRegistry name nvd3
+86 silly mapToRegistry using default registry
+87 silly mapToRegistry registry https://registry.npmjs.org/
+88 silly mapToRegistry data Result {
+88 silly mapToRegistry   raw: 'nvd3',
+88 silly mapToRegistry   scope: null,
+88 silly mapToRegistry   escapedName: 'nvd3',
+88 silly mapToRegistry   name: 'nvd3',
+88 silly mapToRegistry   rawSpec: '',
+88 silly mapToRegistry   spec: 'latest',
+88 silly mapToRegistry   type: 'tag' }
+89 silly mapToRegistry uri https://registry.npmjs.org/nvd3
+90 verbose request uri https://registry.npmjs.org/nvd3
+91 verbose request no auth needed
+92 info attempt registry request try #1 at 11:27:27 PM
+93 http request GET https://registry.npmjs.org/nvd3
+94 verbose request uri https://registry.npmjs.org/d3
+95 verbose request no auth needed
+96 info attempt registry request try #1 at 11:27:27 PM
+97 http request GET https://registry.npmjs.org/d3
+98 verbose request uri https://registry.npmjs.org/angular
+99 verbose request no auth needed
+100 info attempt registry request try #1 at 11:27:27 PM
+101 verbose etag W/"58b42c3b-24109"
+102 verbose lastModified Mon, 27 Feb 2017 13:40:11 GMT
+103 http request GET https://registry.npmjs.org/angular
+104 http 200 https://registry.npmjs.org/nvd3
+105 verbose headers { server: 'nginx/1.4.6 (Ubuntu)',
+105 verbose headers   'content-type': 'application/json',
+105 verbose headers   'last-modified': 'Thu, 01 Dec 2016 12:33:34 GMT',
+105 verbose headers   'content-encoding': 'gzip',
+105 verbose headers   'cache-control': 'max-age=300',
+105 verbose headers   'content-length': '6206',
+105 verbose headers   'accept-ranges': 'bytes',
+105 verbose headers   date: 'Sat, 15 Apr 2017 17:57:29 GMT',
+105 verbose headers   via: '1.1 varnish',
+105 verbose headers   age: '0',
+105 verbose headers   connection: 'keep-alive',
+105 verbose headers   'x-served-by': 'cache-sin18021-SIN',
+105 verbose headers   'x-cache': 'MISS',
+105 verbose headers   'x-cache-hits': '0',
+105 verbose headers   'x-timer': 'S1492279049.134274,VS0,VE104',
+105 verbose headers   vary: 'Accept-Encoding' }
+106 silly get cb [ 200,
+106 silly get   { server: 'nginx/1.4.6 (Ubuntu)',
+106 silly get     'content-type': 'application/json',
+106 silly get     'last-modified': 'Thu, 01 Dec 2016 12:33:34 GMT',
+106 silly get     'content-encoding': 'gzip',
+106 silly get     'cache-control': 'max-age=300',
+106 silly get     'content-length': '6206',
+106 silly get     'accept-ranges': 'bytes',
+106 silly get     date: 'Sat, 15 Apr 2017 17:57:29 GMT',
+106 silly get     via: '1.1 varnish',
+106 silly get     age: '0',
+106 silly get     connection: 'keep-alive',
+106 silly get     'x-served-by': 'cache-sin18021-SIN',
+106 silly get     'x-cache': 'MISS',
+106 silly get     'x-cache-hits': '0',
+106 silly get     'x-timer': 'S1492279049.134274,VS0,VE104',
+106 silly get     vary: 'Accept-Encoding' } ]
+107 verbose get saving nvd3 to C:\Users\Gowri\AppData\Roaming\npm-cache\registry.npmjs.org\nvd3\.cache.json
+108 verbose correctMkdir C:\Users\Gowri\AppData\Roaming\npm-cache correctMkdir not in flight; initializing
+109 silly resolveWithNewModule nvd3@1.8.5 checking installable status
+110 silly cache add args [ 'nvd3@^1.7.1', null ]
+111 verbose cache add spec nvd3@^1.7.1
+112 silly cache add parsed spec Result {
+112 silly cache add   raw: 'nvd3@^1.7.1',
+112 silly cache add   scope: null,
+112 silly cache add   escapedName: 'nvd3',
+112 silly cache add   name: 'nvd3',
+112 silly cache add   rawSpec: '^1.7.1',
+112 silly cache add   spec: '>=1.7.1 <2.0.0',
+112 silly cache add   type: 'range' }
+113 silly addNamed nvd3@>=1.7.1 <2.0.0
+114 verbose addNamed ">=1.7.1 <2.0.0" is a valid semver range for nvd3
+115 silly addNameRange { name: 'nvd3', range: '>=1.7.1 <2.0.0', hasData: false }
+116 silly mapToRegistry name nvd3
+117 silly mapToRegistry using default registry
+118 silly mapToRegistry registry https://registry.npmjs.org/
+119 silly mapToRegistry data Result {
+119 silly mapToRegistry   raw: 'nvd3',
+119 silly mapToRegistry   scope: null,
+119 silly mapToRegistry   escapedName: 'nvd3',
+119 silly mapToRegistry   name: 'nvd3',
+119 silly mapToRegistry   rawSpec: '',
+119 silly mapToRegistry   spec: 'latest',
+119 silly mapToRegistry   type: 'tag' }
+120 silly mapToRegistry uri https://registry.npmjs.org/nvd3
+121 verbose addNameRange registry:https://registry.npmjs.org/nvd3 not in flight; fetching
+122 verbose get https://registry.npmjs.org/nvd3 not expired, no request
+123 silly addNameRange number 2 { name: 'nvd3', range: '>=1.7.1 <2.0.0', hasData: true }
+124 silly addNameRange versions [ 'nvd3',
+124 silly addNameRange   [ '0.9.0',
+124 silly addNameRange     '1.0.0',
+124 silly addNameRange     '1.1.10',
+124 silly addNameRange     '1.1.12',
+124 silly addNameRange     '1.1.13',
+124 silly addNameRange     '1.1.14',
+124 silly addNameRange     '1.1.15',
+124 silly addNameRange     '1.1.15-beta1',
+124 silly addNameRange     '1.1.15-beta2',
+124 silly addNameRange     '1.8.1',
+124 silly addNameRange     '1.8.2',
+124 silly addNameRange     '1.8.3',
+124 silly addNameRange     '1.8.4',
+124 silly addNameRange     '1.7.1',
+124 silly addNameRange     '1.8.5' ] ]
+125 silly addNamed nvd3@1.8.5
+126 verbose addNamed "1.8.5" is a plain semver version for nvd3
+127 silly mapToRegistry name nvd3
+128 silly mapToRegistry using default registry
+129 silly mapToRegistry registry https://registry.npmjs.org/
+130 silly mapToRegistry data Result {
+130 silly mapToRegistry   raw: 'nvd3',
+130 silly mapToRegistry   scope: null,
+130 silly mapToRegistry   escapedName: 'nvd3',
+130 silly mapToRegistry   name: 'nvd3',
+130 silly mapToRegistry   rawSpec: '',
+130 silly mapToRegistry   spec: 'latest',
+130 silly mapToRegistry   type: 'tag' }
+131 silly mapToRegistry uri https://registry.npmjs.org/nvd3
+132 verbose addRemoteTarball https://registry.npmjs.org/nvd3/-/nvd3-1.8.5.tgz not in flight; adding
+133 verbose addRemoteTarball [ 'https://registry.npmjs.org/nvd3/-/nvd3-1.8.5.tgz',
+133 verbose addRemoteTarball   '94a0c98ff1c3366b721fa7a8705b3c6e9eaf6bb6' ]
+134 info retry fetch attempt 1 at 11:27:28 PM
+135 info attempt registry request try #1 at 11:27:28 PM
+136 http fetch GET https://registry.npmjs.org/nvd3/-/nvd3-1.8.5.tgz
+137 http 200 https://registry.npmjs.org/angular
+138 verbose headers { server: 'nginx/1.4.6 (Ubuntu)',
+138 verbose headers   'content-type': 'application/json',
+138 verbose headers   'last-modified': 'Sat, 15 Apr 2017 15:01:23 GMT',
+138 verbose headers   'content-encoding': 'gzip',
+138 verbose headers   'cache-control': 'max-age=300',
+138 verbose headers   'content-length': '15460',
+138 verbose headers   'accept-ranges': 'bytes',
+138 verbose headers   date: 'Sat, 15 Apr 2017 17:57:31 GMT',
+138 verbose headers   via: '1.1 varnish',
+138 verbose headers   age: '295',
+138 verbose headers   connection: 'keep-alive',
+138 verbose headers   'x-served-by': 'cache-sin18027-SIN',
+138 verbose headers   'x-cache': 'HIT',
+138 verbose headers   'x-cache-hits': '1',
+138 verbose headers   'x-timer': 'S1492279052.855393,VS0,VE0',
+138 verbose headers   vary: 'Accept-Encoding' }
+139 silly get cb [ 200,
+139 silly get   { server: 'nginx/1.4.6 (Ubuntu)',
+139 silly get     'content-type': 'application/json',
+139 silly get     'last-modified': 'Sat, 15 Apr 2017 15:01:23 GMT',
+139 silly get     'content-encoding': 'gzip',
+139 silly get     'cache-control': 'max-age=300',
+139 silly get     'content-length': '15460',
+139 silly get     'accept-ranges': 'bytes',
+139 silly get     date: 'Sat, 15 Apr 2017 17:57:31 GMT',
+139 silly get     via: '1.1 varnish',
+139 silly get     age: '295',
+139 silly get     connection: 'keep-alive',
+139 silly get     'x-served-by': 'cache-sin18027-SIN',
+139 silly get     'x-cache': 'HIT',
+139 silly get     'x-cache-hits': '1',
+139 silly get     'x-timer': 'S1492279052.855393,VS0,VE0',
+139 silly get     vary: 'Accept-Encoding' } ]
+140 verbose get saving angular to C:\Users\Gowri\AppData\Roaming\npm-cache\registry.npmjs.org\angular\.cache.json
+141 verbose correctMkdir C:\Users\Gowri\AppData\Roaming\npm-cache correctMkdir not in flight; initializing
+142 silly resolveWithNewModule angular@1.6.4 checking installable status
+143 silly cache add args [ 'angular@^1.x', null ]
+144 verbose cache add spec angular@^1.x
+145 silly cache add parsed spec Result {
+145 silly cache add   raw: 'angular@^1.x',
+145 silly cache add   scope: null,
+145 silly cache add   escapedName: 'angular',
+145 silly cache add   name: 'angular',
+145 silly cache add   rawSpec: '^1.x',
+145 silly cache add   spec: '>=1.0.0 <2.0.0',
+145 silly cache add   type: 'range' }
+146 silly addNamed angular@>=1.0.0 <2.0.0
+147 verbose addNamed ">=1.0.0 <2.0.0" is a valid semver range for angular
+148 silly addNameRange { name: 'angular', range: '>=1.0.0 <2.0.0', hasData: false }
+149 silly mapToRegistry name angular
+150 silly mapToRegistry using default registry
+151 silly mapToRegistry registry https://registry.npmjs.org/
+152 silly mapToRegistry data Result {
+152 silly mapToRegistry   raw: 'angular',
+152 silly mapToRegistry   scope: null,
+152 silly mapToRegistry   escapedName: 'angular',
+152 silly mapToRegistry   name: 'angular',
+152 silly mapToRegistry   rawSpec: '',
+152 silly mapToRegistry   spec: 'latest',
+152 silly mapToRegistry   type: 'tag' }
+153 silly mapToRegistry uri https://registry.npmjs.org/angular
+154 verbose addNameRange registry:https://registry.npmjs.org/angular not in flight; fetching
+155 verbose get https://registry.npmjs.org/angular not expired, no request
+156 silly addNameRange number 2 { name: 'angular', range: '>=1.0.0 <2.0.0', hasData: true }
+157 silly addNameRange versions [ 'angular',
+157 silly addNameRange   [ '0.0.1',
+157 silly addNameRange     '0.0.1-1',
+157 silly addNameRange     '0.0.1-2',
+157 silly addNameRange     '0.0.2',
+157 silly addNameRange     '0.0.3',
+157 silly addNameRange     '0.0.4',
+157 silly addNameRange     '1.0.0',
+157 silly addNameRange     '1.0.1',
+157 silly addNameRange     '1.0.2',
+157 silly addNameRange     '1.0.3',
+157 silly addNameRange     '1.0.4',
+157 silly addNameRange     '1.0.5',
+157 silly addNameRange     '1.0.6',
+157 silly addNameRange     '1.0.7',
+157 silly addNameRange     '1.0.8',
+157 silly addNameRange     '1.1.0',
+157 silly addNameRange     '1.1.1',
+157 silly addNameRange     '1.1.2',
+157 silly addNameRange     '1.1.3',
+157 silly addNameRange     '1.1.4',
+157 silly addNameRange     '1.1.5',
+157 silly addNameRange     '1.2.0',
+157 silly addNameRange     '1.2.1',
+157 silly addNameRange     '1.2.2',
+157 silly addNameRange     '1.2.3',
+157 silly addNameRange     '1.2.4',
+157 silly addNameRange     '1.2.5',
+157 silly addNameRange     '1.2.6',
+157 silly addNameRange     '1.2.7',
+157 silly addNameRange     '1.2.8',
+157 silly addNameRange     '1.2.9',
+157 silly addNameRange     '1.2.10',
+157 silly addNameRange     '1.2.11',
+157 silly addNameRange     '1.2.12',
+157 silly addNameRange     '1.2.13',
+157 silly addNameRange     '1.2.14',
+157 silly addNameRange     '1.2.15',
+157 silly addNameRange     '1.2.16',
+157 silly addNameRange     '1.2.17',
+157 silly addNameRange     '1.2.18',
+157 silly addNameRange     '1.2.19',
+157 silly addNameRange     '1.2.20',
+157 silly addNameRange     '1.2.21',
+157 silly addNameRange     '1.2.22',
+157 silly addNameRange     '1.2.23',
+157 silly addNameRange     '1.3.0-rc.5',
+157 silly addNameRange     '1.3.0',
+157 silly addNameRange     '1.3.1',
+157 silly addNameRange     '1.3.2',
+157 silly addNameRange     '1.3.3',
+157 silly addNameRange     '1.3.4-build.3588',
+157 silly addNameRange     '1.2.27',
+157 silly addNameRange     '1.3.4',
+157 silly addNameRange     '1.3.5',
+157 silly addNameRange     '1.3.6',
+157 silly addNameRange     '1.3.7',
+157 silly addNameRange     '1.2.28',
+157 silly addNameRange     '1.3.8',
+157 silly addNameRange     '1.4.0-beta.0',
+157 silly addNameRange     '1.3.9',
+157 silly addNameRange     '1.3.10',
+157 silly addNameRange     '1.4.0-beta.1',
+157 silly addNameRange     '1.4.0-beta.2',
+157 silly addNameRange     '1.3.11',
+157 silly addNameRange     '1.4.0-beta.3',
+157 silly addNameRange     '1.3.12',
+157 silly addNameRange     '1.3.13',
+157 silly addNameRange     '1.4.0-beta.4',
+157 silly addNameRange     '1.3.14',
+157 silly addNameRange     '1.4.0-beta.5',
+157 silly addNameRange     '1.4.0-beta.6',
+157 silly addNameRange     '1.3.15',
+157 silly addNameRange     '1.4.0-rc.0',
+157 silly addNameRange     '1.4.0-rc.1',
+157 silly addNameRange     '1.4.0-rc.2',
+157 silly addNameRange     '1.4.0',
+157 silly addNameRange     '1.3.16',
+157 silly addNameRange     '1.4.1',
+157 silly addNameRange     '1.4.2',
+157 silly addNameRange     '1.3.17',
+157 silly addNameRange     '1.4.3',
+157 silly addNameRange     '1.4.4',
+157 silly addNameRange     '1.3.18',
+157 silly addNameRange     '1.4.5',
+157 silly addNameRange     '1.3.19',
+157 silly addNameRange     '1.4.6',
+157 silly addNameRange     '1.5.0-beta.0',
+157 silly addNameRange     '1.2.29',
+157 silly addNameRange     '1.3.20',
+157 silly addNameRange     '1.4.7',
+157 silly addNameRange     '1.5.0-beta.2',
+157 silly addNameRange     '1.4.8',
+157 silly addNameRange     '1.5.0-rc.0',
+157 silly addNameRange     '1.5.0-rc.1',
+157 silly addNameRange     '1.4.9',
+157 silly addNameRange     '1.5.0-rc.2',
+157 silly addNameRange     '1.5.0',
+157 silly addNameRange     '1.5.1',
+157 silly addNameRange     '1.4.10',
+157 silly addNameRange     '1.5.2',
+157 silly addNameRange     ... 23 more items ] ]
+158 silly addNamed angular@1.6.4
+159 verbose addNamed "1.6.4" is a plain semver version for angular
+160 silly mapToRegistry name angular
+161 silly mapToRegistry using default registry
+162 silly mapToRegistry registry https://registry.npmjs.org/
+163 silly mapToRegistry data Result {
+163 silly mapToRegistry   raw: 'angular',
+163 silly mapToRegistry   scope: null,
+163 silly mapToRegistry   escapedName: 'angular',
+163 silly mapToRegistry   name: 'angular',
+163 silly mapToRegistry   rawSpec: '',
+163 silly mapToRegistry   spec: 'latest',
+163 silly mapToRegistry   type: 'tag' }
+164 silly mapToRegistry uri https://registry.npmjs.org/angular
+165 verbose addRemoteTarball https://registry.npmjs.org/angular/-/angular-1.6.4.tgz not in flight; adding
+166 verbose addRemoteTarball [ 'https://registry.npmjs.org/angular/-/angular-1.6.4.tgz',
+166 verbose addRemoteTarball   '03b7b15c01a0802d7e2cf593240e604054dc77fb' ]
+167 info retry fetch attempt 1 at 11:27:32 PM
+168 info attempt registry request try #1 at 11:27:32 PM
+169 http fetch GET https://registry.npmjs.org/angular/-/angular-1.6.4.tgz
+170 http fetch 200 https://registry.npmjs.org/nvd3/-/nvd3-1.8.5.tgz
+171 silly fetchAndShaCheck shasum 94a0c98ff1c3366b721fa7a8705b3c6e9eaf6bb6
+172 verbose addTmpTarball C:\Users\Gowri\AppData\Local\Temp\npm-2476-eabbf4b0\registry.npmjs.org\nvd3\-\nvd3-1.8.5.tgz not in flight; adding
+173 verbose addTmpTarball already have metadata; skipping unpack for nvd3@1.8.5
+174 verbose correctMkdir C:\Users\Gowri\AppData\Roaming\npm-cache correctMkdir not in flight; initializing
+175 silly cache afterAdd nvd3@1.8.5
+176 verbose afterAdd C:\Users\Gowri\AppData\Roaming\npm-cache\nvd3\1.8.5\package\package.json not in flight; writing
+177 verbose correctMkdir C:\Users\Gowri\AppData\Roaming\npm-cache correctMkdir not in flight; initializing
+178 verbose afterAdd C:\Users\Gowri\AppData\Roaming\npm-cache\nvd3\1.8.5\package\package.json written
+179 http 200 https://registry.npmjs.org/d3
+180 verbose headers { server: 'nginx/1.4.6 (Ubuntu)',
+180 verbose headers   'content-type': 'application/json',
+180 verbose headers   'last-modified': 'Sat, 15 Apr 2017 05:36:07 GMT',
+180 verbose headers   'content-encoding': 'gzip',
+180 verbose headers   'cache-control': 'max-age=300',
+180 verbose headers   'content-length': '23960',
+180 verbose headers   'accept-ranges': 'bytes',
+180 verbose headers   date: 'Sat, 15 Apr 2017 17:57:43 GMT',
+180 verbose headers   via: '1.1 varnish',
+180 verbose headers   age: '66',
+180 verbose headers   connection: 'keep-alive',
+180 verbose headers   'x-served-by': 'cache-sin18022-SIN',
+180 verbose headers   'x-cache': 'HIT',
+180 verbose headers   'x-cache-hits': '1',
+180 verbose headers   'x-timer': 'S1492279064.771372,VS0,VE1',
+180 verbose headers   vary: 'Accept-Encoding' }
+181 silly get cb [ 200,
+181 silly get   { server: 'nginx/1.4.6 (Ubuntu)',
+181 silly get     'content-type': 'application/json',
+181 silly get     'last-modified': 'Sat, 15 Apr 2017 05:36:07 GMT',
+181 silly get     'content-encoding': 'gzip',
+181 silly get     'cache-control': 'max-age=300',
+181 silly get     'content-length': '23960',
+181 silly get     'accept-ranges': 'bytes',
+181 silly get     date: 'Sat, 15 Apr 2017 17:57:43 GMT',
+181 silly get     via: '1.1 varnish',
+181 silly get     age: '66',
+181 silly get     connection: 'keep-alive',
+181 silly get     'x-served-by': 'cache-sin18022-SIN',
+181 silly get     'x-cache': 'HIT',
+181 silly get     'x-cache-hits': '1',
+181 silly get     'x-timer': 'S1492279064.771372,VS0,VE1',
+181 silly get     vary: 'Accept-Encoding' } ]
+182 verbose get saving d3 to C:\Users\Gowri\AppData\Roaming\npm-cache\registry.npmjs.org\d3\.cache.json
+183 verbose correctMkdir C:\Users\Gowri\AppData\Roaming\npm-cache correctMkdir not in flight; initializing
+184 silly resolveWithNewModule d3@3.5.17 checking installable status
+185 silly cache add args [ 'd3@^3.3', null ]
+186 verbose cache add spec d3@^3.3
+187 silly cache add parsed spec Result {
+187 silly cache add   raw: 'd3@^3.3',
+187 silly cache add   scope: null,
+187 silly cache add   escapedName: 'd3',
+187 silly cache add   name: 'd3',
+187 silly cache add   rawSpec: '^3.3',
+187 silly cache add   spec: '>=3.3.0 <4.0.0',
+187 silly cache add   type: 'range' }
+188 silly addNamed d3@>=3.3.0 <4.0.0
+189 verbose addNamed ">=3.3.0 <4.0.0" is a valid semver range for d3
+190 silly addNameRange { name: 'd3', range: '>=3.3.0 <4.0.0', hasData: false }
+191 silly mapToRegistry name d3
+192 silly mapToRegistry using default registry
+193 silly mapToRegistry registry https://registry.npmjs.org/
+194 silly mapToRegistry data Result {
+194 silly mapToRegistry   raw: 'd3',
+194 silly mapToRegistry   scope: null,
+194 silly mapToRegistry   escapedName: 'd3',
+194 silly mapToRegistry   name: 'd3',
+194 silly mapToRegistry   rawSpec: '',
+194 silly mapToRegistry   spec: 'latest',
+194 silly mapToRegistry   type: 'tag' }
+195 silly mapToRegistry uri https://registry.npmjs.org/d3
+196 verbose addNameRange registry:https://registry.npmjs.org/d3 not in flight; fetching
+197 verbose get https://registry.npmjs.org/d3 not expired, no request
+198 silly addNameRange number 2 { name: 'd3', range: '>=3.3.0 <4.0.0', hasData: true }
+199 silly addNameRange versions [ 'd3',
+199 silly addNameRange   [ '1.29.5',
+199 silly addNameRange     '2.1.3',
+199 silly addNameRange     '2.2.1',
+199 silly addNameRange     '2.3.0',
+199 silly addNameRange     '2.3.2',
+199 silly addNameRange     '2.3.3',
+199 silly addNameRange     '2.3.4',
+199 silly addNameRange     '2.4.0',
+199 silly addNameRange     '2.4.1',
+199 silly addNameRange     '2.4.2',
+199 silly addNameRange     '2.5.1',
+199 silly addNameRange     '2.5.2',
+199 silly addNameRange     '2.6.0',
+199 silly addNameRange     '2.7.0',
+199 silly addNameRange     '2.7.2',
+199 silly addNameRange     '2.7.3',
+199 silly addNameRange     '2.7.4',
+199 silly addNameRange     '2.7.5',
+199 silly addNameRange     '2.8.0',
+199 silly addNameRange     '2.8.1',
+199 silly addNameRange     '2.9.0',
+199 silly addNameRange     '2.9.1',
+199 silly addNameRange     '2.9.2',
+199 silly addNameRange     '2.9.3',
+199 silly addNameRange     '2.9.4',
+199 silly addNameRange     '2.9.6',
+199 silly addNameRange     '2.9.7',
+199 silly addNameRange     '2.10.0',
+199 silly addNameRange     '2.10.1',
+199 silly addNameRange     '2.10.3',
+199 silly addNameRange     '3.0.0',
+199 silly addNameRange     '3.0.1',
+199 silly addNameRange     '3.0.2',
+199 silly addNameRange     '3.0.3',
+199 silly addNameRange     '3.0.4',
+199 silly addNameRange     '3.0.5',
+199 silly addNameRange     '3.0.6',
+199 silly addNameRange     '3.0.7',
+199 silly addNameRange     '3.0.8',
+199 silly addNameRange     '3.1.0',
+199 silly addNameRange     '3.1.1',
+199 silly addNameRange     '3.1.2',
+199 silly addNameRange     '3.1.3',
+199 silly addNameRange     '3.1.4',
+199 silly addNameRange     '3.1.5',
+199 silly addNameRange     '3.1.6',
+199 silly addNameRange     '3.1.7',
+199 silly addNameRange     '3.1.8',
+199 silly addNameRange     '3.1.9',
+199 silly addNameRange     '3.1.10',
+199 silly addNameRange     '3.2.0',
+199 silly addNameRange     '3.2.1',
+199 silly addNameRange     '3.2.2',
+199 silly addNameRange     '3.2.3',
+199 silly addNameRange     '3.2.4',
+199 silly addNameRange     '3.2.5',
+199 silly addNameRange     '3.2.6',
+199 silly addNameRange     '3.2.7',
+199 silly addNameRange     '3.2.8',
+199 silly addNameRange     '3.3.0',
+199 silly addNameRange     '3.3.1',
+199 silly addNameRange     '3.3.2',
+199 silly addNameRange     '3.3.3',
+199 silly addNameRange     '3.3.4',
+199 silly addNameRange     '3.3.5',
+199 silly addNameRange     '3.3.6',
+199 silly addNameRange     '3.3.7',
+199 silly addNameRange     '3.3.8',
+199 silly addNameRange     '3.3.9',
+199 silly addNameRange     '3.3.10',
+199 silly addNameRange     '3.3.11',
+199 silly addNameRange     '3.3.12',
+199 silly addNameRange     '3.3.13',
+199 silly addNameRange     '3.4.0',
+199 silly addNameRange     '3.4.1',
+199 silly addNameRange     '3.4.2',
+199 silly addNameRange     '3.4.3',
+199 silly addNameRange     '3.4.4',
+199 silly addNameRange     '3.4.5',
+199 silly addNameRange     '3.4.6',
+199 silly addNameRange     '3.4.7',
+199 silly addNameRange     '3.4.8',
+199 silly addNameRange     '3.4.9',
+199 silly addNameRange     '3.4.10',
+199 silly addNameRange     '3.4.11',
+199 silly addNameRange     '3.4.12',
+199 silly addNameRange     '3.4.13',
+199 silly addNameRange     '3.5.0',
+199 silly addNameRange     '3.5.1',
+199 silly addNameRange     '3.5.2',
+199 silly addNameRange     '3.5.3',
+199 silly addNameRange     '3.5.4',
+199 silly addNameRange     '3.5.5',
+199 silly addNameRange     '3.5.6',
+199 silly addNameRange     '3.5.7',
+199 silly addNameRange     '3.5.8',
+199 silly addNameRange     '3.5.9',
+199 silly addNameRange     '3.5.10',
+199 silly addNameRange     '3.5.11',
+199 silly addNameRange     '3.5.12',
+199 silly addNameRange     ... 83 more items ] ]
+200 silly addNamed d3@3.5.17
+201 verbose addNamed "3.5.17" is a plain semver version for d3
+202 silly mapToRegistry name d3
+203 silly mapToRegistry using default registry
+204 silly mapToRegistry registry https://registry.npmjs.org/
+205 silly mapToRegistry data Result {
+205 silly mapToRegistry   raw: 'd3',
+205 silly mapToRegistry   scope: null,
+205 silly mapToRegistry   escapedName: 'd3',
+205 silly mapToRegistry   name: 'd3',
+205 silly mapToRegistry   rawSpec: '',
+205 silly mapToRegistry   spec: 'latest',
+205 silly mapToRegistry   type: 'tag' }
+206 silly mapToRegistry uri https://registry.npmjs.org/d3
+207 verbose addRemoteTarball https://registry.npmjs.org/d3/-/d3-3.5.17.tgz not in flight; adding
+208 verbose addRemoteTarball [ 'https://registry.npmjs.org/d3/-/d3-3.5.17.tgz',
+208 verbose addRemoteTarball   'bc46748004378b21a360c9fc7cf5231790762fb8' ]
+209 info retry fetch attempt 1 at 11:27:45 PM
+210 info attempt registry request try #1 at 11:27:45 PM
+211 http fetch GET https://registry.npmjs.org/d3/-/d3-3.5.17.tgz
+212 http fetch 200 https://registry.npmjs.org/d3/-/d3-3.5.17.tgz
+213 silly fetchAndShaCheck shasum bc46748004378b21a360c9fc7cf5231790762fb8
+214 verbose addTmpTarball C:\Users\Gowri\AppData\Local\Temp\npm-2476-eabbf4b0\registry.npmjs.org\d3\-\d3-3.5.17.tgz not in flight; adding
+215 verbose addTmpTarball already have metadata; skipping unpack for d3@3.5.17
+216 verbose correctMkdir C:\Users\Gowri\AppData\Roaming\npm-cache correctMkdir not in flight; initializing
+217 silly cache afterAdd d3@3.5.17
+218 verbose afterAdd C:\Users\Gowri\AppData\Roaming\npm-cache\d3\3.5.17\package\package.json not in flight; writing
+219 verbose correctMkdir C:\Users\Gowri\AppData\Roaming\npm-cache correctMkdir not in flight; initializing
+220 verbose afterAdd C:\Users\Gowri\AppData\Roaming\npm-cache\d3\3.5.17\package\package.json written
+221 http fetch 200 https://registry.npmjs.org/angular/-/angular-1.6.4.tgz
+222 verbose stack Error: kill ENOSYS
+222 verbose stack     at exports._errnoException (util.js:1022:11)
+222 verbose stack     at process.kill (internal/process.js:172:13)
+222 verbose stack     at process.listener (C:\Program Files\nodejs\node_modules\npm\node_modules\npmlog\node_modules\gauge\node_modules\signal-exit\index.js:86:15)
+222 verbose stack     at emitNone (events.js:91:20)
+222 verbose stack     at process.emit (events.js:185:7)
+222 verbose stack     at processEmit (C:\Program Files\nodejs\node_modules\npm\node_modules\npmlog\node_modules\gauge\node_modules\signal-exit\index.js:146:32)
+222 verbose stack     at processEmit (C:\Program Files\nodejs\node_modules\npm\node_modules\npm-registry-client\node_modules\npmlog\node_modules\gauge\node_modules\signal-exit\index.js:146:32)
+222 verbose stack     at Signal.wrap.onsignal (internal/process.js:199:44)
+223 verbose cwd E:\Java\Java_Apps\Workspace\MegatechOffice\FrontendCassa\src\main\resources
+224 error Windows_NT 10.0.14393
+225 error argv "C:\\Program Files\\nodejs\\node.exe" "C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js" "install" "angular-nvd3"
+226 error node v6.9.4
+227 error npm  v3.10.10
+228 error code ENOSYS
+229 error errno ENOSYS
+230 error syscall kill
+231 error kill ENOSYS
+232 error If you need help, you may report this error at:
+232 error     <https://github.com/npm/npm/issues>
+233 verbose exit [ 1, true ]
