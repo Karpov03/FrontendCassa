@@ -18,8 +18,7 @@
 <!-- Theme style -->
 <link rel="stylesheet" href="dist/css/AdminLTE.min.css" />
 <link rel="stylesheet" href="dist/css/skin-blue.min.css" />
-<link rel="stylesheet"
-	href="css/daterangepicker-bs3.css" />
+<link rel="stylesheet" href="css/daterangepicker-bs3.css" />
 <link rel="stylesheet" href="css/app.css" />
 
 
@@ -53,65 +52,19 @@
 			<!-- Navbar Right Menu -->
 			<div class="navbar-custom-menu">
 				<ul class="nav navbar-nav">
-					<!-- Notifications Menu -->
-					<li class="dropdown notifications-menu">
-						<!-- Menu toggle button --> <a href="#" class="dropdown-toggle"
-						data-toggle="dropdown"> <i class="fa fa-bell-o"
-							style="color: black"></i> <span class="label label-warning">10</span>
-					</a>
-						<ul class="dropdown-menu">
-							<li class="header">You have 10 notifications</li>
-							<li>
-								<!-- Inner Menu: contains the notifications -->
-								<ul class="menu">
-									<li>
-										<!-- start notification --> <a href="#"> <i
-											class="fa fa-users text-aqua"></i> 5 new members joined today
-									</a>
-									</li>
-									<!-- end notification -->
-								</ul>
-							</li>
-							<li class="footer"><a href="#">View all</a></li>
-						</ul>
-					</li>
+
 
 
 					<!-- User Account Menu -->
 					<li class="dropdown user user-menu">
-						<!-- Menu Toggle Button --> <a href="#" class="dropdown-toggle"
-						data-toggle="dropdown"> <!-- The user image in the navbar--> <img
-							src="dist/img/user2-160x160.jpg" class="user-image"
-							alt="User Image" /> <!-- hidden-xs hides the username on small devices so only the image appears. -->
+						<!-- Menu Toggle Button --> <a  class="dropdown-toggle"
+						data-toggle="dropdown"> <!-- The user image in the navbar--> <!-- hidden-xs hides the username on small devices so only the image appears. -->
 							<span style="color: black; font-size: 17px; padding-right: 20px;"
-							class="hidden-xs">User Name</span>
-					</a>
-						<ul class="dropdown-menu">
-							<!-- The user image in the menu -->
-							<li class="user-header"><img
-								src="dist/img/user2-160x160.jpg" class="img-circle"
-								alt="User Image" />
-								<p>
-									<strong>User Name</strong><small style="font-size: 18px;">Sample
-										text goes here</small>
-								</p></li>
-							<!-- Menu Body -->
-
-							<!-- Menu Footer-->
-							<li class="user-footer">
-								<div class="pull-left">
-									<a href="#" class="btn btn-default btn-flat">Profile</a>
-								</div>
-								<div class="pull-right">
-									<a href="index.html" class="btn btn-default btn-flat">Sign
-										out</a>
-								</div>
-							</li>
-						</ul>
+							class="hidden-xs">Megatech</span>
+					</a> <!-- Control Sidebar Toggle Button --> <!--  <li> <a href="#" data-toggle="control-sidebar"><i class="fa fa-gears" style="color: black"></i></a> </li>-->
 					</li>
-					<!-- Control Sidebar Toggle Button -->
-					<!--  <li> <a href="#" data-toggle="control-sidebar"><i class="fa fa-gears" style="color: black"></i></a> </li>-->
 				</ul>
+
 			</div>
 		</nav>
 	</header>
@@ -126,28 +79,28 @@
 				<!-- Optionally, you can add icons to the links -->
 				<li class="active"><a data-ui-sref="home"><i
 						class="fa fa-home"></i> <span>Home</span></a></li>
-				<li class="treeview"><a href="#"><i class="fa fa-database"></i>
-						<span>Sites</span></a>
+				<li class="treeview"><a href="#"><i class="fa fa-map-o"></i>
+						<span>Sites</span><span class="pull-right-container"> <i class="fa fa-angle-left pull-right"></i> </span> </a>
 					<ul class="treeview-menu">
-						<li class="treeview" data-ng-repeat="site in listCtrl.SiteList"><a
-							data-ng-click="listCtrl.doSomething(site.siteId,site.siteName)"
-							data-ui-sref="site/{{site.siteName }}">{{ site.siteName }}</a>
+						<li class="treeview"><a	data-ng-click="listCtrl.doSomething('1','Abu Dhabi')">ABU DHABHI</a>
 
 							<ul class="treeview-menu">
-								<li data-ng-repeat="area in site.area"><a
-									data-ng-click="listCtrl.doSomething(area.areaId,area.areaName)"
-									data-ui-sref="area({ id: '{{area.areaId }}' })">{{
-										area.areaName}}</a></li>
+								<li><a data-ng-click="listCtrl.doSomething('1','AL Wahdah')"
+									data-ui-sref="area({ id: '15' })">AL WAHDAH</a></li>
+								<li><a data-ng-click="listCtrl.doSomething('2','AL Rowdah')"
+									data-ui-sref="area({ id: '16' })">AL ROWDAH</a></li>
+									<li><a data-ng-click="listCtrl.doSomething('2','AL Rowdah')"
+									data-ui-sref="area({ id: '17' })">AL MUSHRIF</a></li>
 							</ul></li>
 					</ul></li>
-				<li><a href="#"><i class="fa fa-area-chart"></i> <span>Reports</span></a></li>
-				<li><a href="#"><i class="fa fa-bell-o"></i> <span>Alerts</span></a></li>
+
 			</ul>
 			<!-- /.sidebar-menu -->
 		</section>
 		<!-- /.sidebar -->
 	</aside>
 
+	<div class="clear"></div>
 
 	<!--  NgView Goes Here-->
 	<!--<div>
@@ -163,7 +116,7 @@
 	
 	</data-ui-view> -->
 
-	
+
 
 	<div class="control-sidebar-bg"></div>
 	<!-- ./wrapper -->
@@ -183,15 +136,16 @@
 	 -->
 
 	<script type="text/javascript" src="js/angular-ui-router.js"></script>
-	<!-- <script type="text/javascript" src="js/d3.min.js"></script>
 	
- -->
 
 	<script type="text/javascript"
 		src="webjars/angularjs/1.6.2/angular-resource.js"></script>
-	<script type="text/javascript" src="js/Chart.js"></script>
-	<script type="text/javascript" src="js/angular-chart.js"></script>
-	<script type="text/javascript" src="js/angular-charts.js"></script>
+	
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/1.0.1/Chart.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.12.0/ui-bootstrap-tpls.min.js"></script>
+  
+  	<script type="text/javascript" src="js/angular-chart.js"></script>
+
 
 	<!-- date-range-picker moment -->
 	<script src="js/moment.js"></script>
@@ -200,10 +154,16 @@
 	<!-- Angular daterangepicker -->
 	<script src="js/ng-bs-daterangepicker.js"></script>
 
-	<!-- AdminLTE App -->
-	<script src="dist/js/app.min.js"></script>
+	
+	
+
+<!-- AdminLTE App --> 
+<script src="dist/js/app.min.js"></script> 
+	
 	<script type="text/javascript" src="js/appFront.js"></script>
 	<script type="text/javascript" src="js/listController.js"></script>
+	<script type="text/javascript" src="js/dateController.js"></script>
+	<script type="text/javascript" src="js/chartController.js"></script>
 
 
 

@@ -1,1 +1,1 @@
-var mainApp = angular.module('MainApp', [ 'ui.router' ,'chart.js','ngBootstrap']);
+var mainApp = angular.module('MainApp', [ 'ui.router','chart.js','ngBootstrap','ui.bootstrap']);

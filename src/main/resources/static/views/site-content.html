@@ -8,17 +8,16 @@
 
 	<section class="content">
 
-
 		<!-- Page Content Here -->
 
-		<div class="row" data-ng-controller="RouteController">
+		<div class="row" data-ng-controller="dateCtrl">
 
 			<div class="col-md-12">
 				<div class="box box-primary">
 					<div class="box-body">
 						<div class="col-xs-6 col-sm-4 col-md-2">
 							<div class="btnnew-group ">
-								<button type="button" class="btnnew btn-default">
+								<!-- 	<button type="button" class="btnnew btn-default">
 									<i class="fa fa-chevron-left"></i>
 								</button>
 								<div class="btnnew ">
@@ -26,52 +25,28 @@
 								</div>
 								<button type="button" class="btnnew btn-default">
 									<i class="fa fa-chevron-right"></i>
-								</button>
+								</button> -->
 							</div>
 						</div>
 						<div class="col-xs-6 col-sm-4 col-md-2">
 							<div class="btnnew-group ">
-								<button type="button" class="btnnew btn-default">
+								<!-- <button type="button" class="btnnew btn-default" data-ng-click="getBWeek()">
 									<i class="fa fa-chevron-left"></i>
 								</button>
 								<div class="btnnew">
 									<h5>WEEK</h5>
 								</div>
-								<button type="button" class="btnnew btn-default">
+								<button type="button" class="btnnew btn-default" data-ng-click="getFWeek()">
 									<i class="fa fa-chevron-right"></i>
-								</button>
+								</button> -->
 							</div>
 						</div>
-						<div class="col-xs-6 col-sm-4 col-md-2">
-							<div class="btnnew-group ">
-								<button type="button" class="btnnew btn-default">
-									<i class="fa fa-chevron-left"></i>
-								</button>
-								<div class="btnnew">
-									<h5>MONTH</h5>
-								</div>
-								<button type="button" class="btnnew btn-default">
-									<i class="fa fa-chevron-right"></i>
-								</button>
-							</div>
-						</div>
-						<div class="col-xs-6 col-sm-4 col-md-2">
-							<div class="btnnew-group ">
-								<button type="button" class="btnnew btn-default">
-									<i class="fa fa-chevron-left"></i>
-								</button>
-								<div class="btnnew">
-									<h5>YEAR</h5>
-								</div>
-								<button type="button" class="btnnew btn-default">
-									<i class="fa fa-chevron-right"></i>
-								</button>
-							</div>
-						</div>
+
+
 						<div class="col-xs-12 col-sm-12 col-md-4"></div>
 						<div class="col-xs-12 col-sm-12 col-md-4">
 							<div class="form-group">
-								<div class="input-group" >
+								<div class="input-group">
 									<div class="input-group-addon">
 										<i class="fa fa-clock-o"></i>
 									</div>
@@ -105,7 +80,7 @@
 								<div class="description-block">
 									<h3 class="bignumber" data-ng-init="gettag15()">
 
-										{{tagValue15| number : 2}}<span class="smalltag"><br>
+										{{(myDateRange.tagValue15)| number : 2}}<span class="smalltag"><br>
 											KWH</span>
 									</h3>
 									<div class="progress sm">
@@ -126,11 +101,11 @@
 					<div class="box-footer">
 						<div class="row">
 							<div class="col-sm-12">
-								<div class="description-block">
-									<h3 class="bignumber" data-ng-init="gettag16()">
+								<div class="description-block" data-ng-init="gettag15()">
+									<h3 class="bignumber">
 
-										{{tagValue16| number : 1}}<span class="smalltag"><br>
-											%</span>
+										{{(myDateRange.tagValue15)*12| number : 2}}<span
+											class="smalltag"><br> AED</span>
 									</h3>
 									<div class="progress sm">
 										<div class="progress-bar progress-bar-red" style="width: 73%"></div>
@@ -149,15 +124,16 @@
 					<div class="box-footer">
 						<div class="row">
 							<div class="col-sm-12">
-								<div class="description-block">
-									<h3 class="bignumber" data-ng-init="gettag17()">
+								<div class="description-block" data-ng-init="gettag15()">
+									<h3 class="bignumber">
 
-										{{tagValue17| number : 2}}<span class="smalltag"><br>
+										{{(myDateRange.tagValue15)/(((myDateRange.endDate-myDateRange.startDate)/(60
+										* 60 * 1000))/24)| number : 2}}<span class="smalltag"><br>
 											KWH</span>
 									</h3>
 									<div class="progress sm">
 										<div class="progress-bar progress-bar-green"
-											style="width: 36%"></div>
+											style="width: {{(myDateRange.tagValue15)/(((myDateRange.endDate-myDateRange.startDate)/(60* 60* 1000))/24)| number: 2"></div>
 									</div>
 								</div>
 							</div>
@@ -173,11 +149,12 @@
 					<div class="box-footer">
 						<div class="row">
 							<div class="col-sm-12">
-								<div class="description-block">
-									<h3 class="bignumber" data-ng-init="gettag18()">
+								<div class="description-block" data-ng-init="gettag15()">
+									<h3 class="bignumber">
 
-										{{tagValue18| number : 1}}<span class="smalltag"><br>
-											%</span>
+										{{(myDateRange.endDate-myDateRange.startDate)/(60 * 60 *
+										1000)| number : 0}}<span class="smalltag"><br>
+											Hours</span>
 									</h3>
 									<div class="progress sm">
 										<div class="progress-bar progress-bar-yellow"
@@ -198,10 +175,10 @@
 						<div class="row">
 							<div class="col-sm-12">
 								<div class="description-block">
-									<h3 class="bignumber" data-ng-init="gettag19()">
+									<h3 class="bignumber" data-ng-init="gettag15()">
 
-										{{tagValue20| number : 2}}<span class="smalltag"><br>
-											KWH</span>
+										{{(myDateRange.tagValue15)/10.43| number : 2}}<span
+											class="smalltag"><br> KWH</span>
 									</h3>
 									<div class="progress sm">
 										<div class="progress-bar progress-bar-green"
@@ -222,10 +199,10 @@
 						<div class="row">
 							<div class="col-sm-12">
 								<div class="description-block">
-									<h3 class="bignumber" data-ng-init="gettag20()">
+									<h3 class="bignumber" data-ng-init="gettag15()">
 
-										{{tagValue19| number : 2}}<span class="smalltag"><br>
-											KWH</span>
+										{{(myDateRange.tagValue15)*4.26| number : 2}}<span
+											class="smalltag"><br> KWH</span>
 									</h3>
 									<div class="progress sm">
 										<div class="progress-bar progress-bar-yellow"
@@ -245,8 +222,7 @@
 
 
 	<section class="content">
-		<div class="row" data-ng-controller="chartController"
-			style="width: 100%;">
+		<div class="row" data-ng-controller="chartCtrl" style="width: 100%;">
 
 			<div class="col-md-6">
 
@@ -258,10 +234,9 @@
 
 						</div>
 						<div class="box-body" style="display: block;">
-							<canvas id="line" class="chart chart-line" data-chart-data="data"
-								data-chart-labels="labels" data-chart-series="series"
-								data-chart-colors="colors"
-								data-chart-dataset-override="datasetOverride">
+							<canvas id="line" class="chart chart-line" data-data="chart1_data"
+								data-labels="chart1_label" data-series="chart1_series" data-colours="chart1_colours"
+							>
                 </canvas>
 						</div>
 					</div>
@@ -277,10 +252,11 @@
 						</div>
 						<div class="box-body" style="display: block;">
 
-							<canvas id="bar" class="chart chart-bar" data-chart-data="data"
-								data-chart-labels="labels" data-chart-series="series"
-								data-chart-colors="colors"
-								data-chart-dataset-override="datasetOverride">
+
+
+							<canvas id="bar" class="chart chart-bar" data-data="chart2_data"
+								data-labels="chart2_label" data-series="chart2_series" data-colours="chart2_colours"
+							>
                 </canvas>
 						</div>
 					</div>
@@ -288,17 +264,9 @@
 			</div>
 		</div>
 
-
-
 	</section>
 	<!-- /.content -->
 
-
-	<!-- <div data-ng-controller="ChartController">
-
-		<div data-ac-chart="'bar'" data-ac-data="data" data-ac-config="config"
-			class="chart"></div>
-	</div> -->
 
 
 
