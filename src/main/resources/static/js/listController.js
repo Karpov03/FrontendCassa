@@ -61,8 +61,6 @@ mainApp.config([ "$stateProvider", "$urlRouterProvider", '$locationProvider',
  * "Tablets", y : [ 54, 0, 879 ] } ] }; });
  */
 
-
-
 mainApp
 		.controller(
 				'RouteController',
@@ -71,54 +69,61 @@ mainApp
 						'$http',
 						'$rootScope',
 						'$stateParams',
-						function($scope, $http, $rootScope, $stateParams) {
+						'$interval',
+						function($scope, $http, $rootScope, $stateParams,
+								$interval) {
 							// Make an AJAX call, retrieving the state.
 
 							/*
 							 * $http .get(
 							 * "https://energyiotbackdev.mybluemix.net/tags/getlist")
 							 * .then(function(response) { $scope.ClickedList1 =
-							 * response.data;// response // data
-							 *  }, function(error) { // alert('Error!'); });
+							 * response.data;// response // data },
+							 * function(error) { // alert('Error!'); });
 							 */
 
-							
-							var resetdate=function(){
-								
+							var resetdate = function() {
 
-								$rootScope.myDateRange.startDate = new Date().getTime() - 43200000;
-								$rootScope.myDateRange.endDate = new Date().getTime();
-								
-									
+								$rootScope.myDateRange.startDate = new Date()
+										.getTime() - 43200000;
+								$rootScope.myDateRange.endDate = new Date()
+										.getTime();
+
 							}
-							
-							 var id = $stateParams.id;
-							
-							//console.log("Defined id:" +id);
-							
+
+							var id = $stateParams.id;
+
+							// console.log("Defined id:" +id);
+
+							var auto = $interval(function() {
+								$scope.gettag15();
+								$scope.gettag16();
+								$scope.gettag17();
+								}, 10000);
+
 							$scope.gettag15 = function() {
-								
+
 								resetdate();
 								$http
 										.get(
-												"https://energyiotbackdev.mybluemix.net/logics/sum/"+id+"/"
+												"https://energyiotbackdev.mybluemix.net/logics/sum/"
+														+ id
+														+ "/"
 														+ $rootScope.myDateRange.startDate
 														+ "/"
 														+ $rootScope.myDateRange.endDate)
 										.then(
 												function(response) {
 													$rootScope.myDateRange.tagValue15 = response.data;
-													$rootScope.myDateRange.tagValue15 = $rootScope.myDateRange.tagValue15 / 36000;
-																									
-													console.log("Avg Date is "
-																	+ $rootScope.myDateRange.tagValue15)
+													$rootScope.myDateRange.tagValue15 = $rootScope.myDateRange.tagValue15 ;
+
+													//console.log("Avg Date is "+ $rootScope.myDateRange.tagValue15)
 												}, function(error) {
 													// alert('Error!');
 												});
 
 							};
-							
-							
+
 							$scope.gettag16 = function() {
 								$http
 										.get(
@@ -129,16 +134,14 @@ mainApp
 										.then(
 												function(response) {
 													$rootScope.myDateRange.tagValue16 = response.data;
-													$rootScope.myDateRange.tagValue16 = $rootScope.myDateRange.tagValue16 / 36000;
-													console
-															.log("Avg Date is "
-																	+ $rootScope.myDateRange.tagValue16)
+													$rootScope.myDateRange.tagValue16 = $rootScope.myDateRange.tagValue16;
+													//console.log("Avg Date is "	+ $rootScope.myDateRange.tagValue16)
 												}, function(error) {
 													// alert('Error!');
 												});
 
 							};
-							
+
 							$scope.gettag17 = function() {
 								$http
 										.get(
@@ -149,16 +152,13 @@ mainApp
 										.then(
 												function(response) {
 													$rootScope.myDateRange.tagValue17 = response.data;
-													$rootScope.myDateRange.tagValue17 = $rootScope.myDateRange.tagValue17 / 36000;
-													console
-															.log("Avg Date is "
-																	+ $rootScope.myDateRange.tagValue17)
+													$rootScope.myDateRange.tagValue17 = $rootScope.myDateRange.tagValue17;
+													//console.log("Avg Date is "+ $rootScope.myDateRange.tagValue17)
 												}, function(error) {
 													// alert('Error!');
 												});
 
 							};
-							
 
 						}
 
@@ -167,7 +167,6 @@ mainApp
 var ListController = function($scope, $http) {
 
 	var $this = this;
-
 
 	$this.doSomething = function(clickedId, nameId) {
 

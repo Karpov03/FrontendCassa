@@ -52,7 +52,9 @@
 									</div>
 									<!-- DateRange Picker -->
 									<input data-type="daterange" class="form-control pull-right"
-										data-ng-model="myDateRange" /> <span class="input-group-btn">
+										data-enableTimePicker="true" data-ranges="ranges"
+										data-enableAutoApply="true" data-ng-model="myDateRange"
+										data-enableDropdowns="true" /> <span class="input-group-btn">
 										<button type="button" class="btn btn-info btn-flat"
 											data-ng-click="getDate(myDateRange.startDate,myDateRange.endDate)">
 											<b>Go</b>
@@ -233,11 +235,17 @@
 							<h3 class="box-title">Energy Consumption</h3>
 
 						</div>
-						<div class="box-body" style="display: block;">
-							<canvas id="line" class="chart chart-line" data-data="chart1_data"
-								data-labels="chart1_label" data-series="chart1_series" data-colours="chart1_colours"
-							>
+						<div class="box-body" style="display: block;" data-ng-init="getCharts(myDateRange.startDate,myDateRange.endDate)">
+							<div class="chartWrapper">
+								<div class="chartAreaWrapper">
+									<canvas id="line" class="chart chart-line"
+										data-data="chart1_data" data-labels="chart1_label"
+										data-series="chart1_series" data-colours="chart1_colours"
+										data-options="options"	 width="20000" height="300">
                 </canvas>
+								
+								</div>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -250,14 +258,17 @@
 							<h3 class="box-title">Areawise Plan vs Actual Consumption</h3>
 
 						</div>
-						<div class="box-body" style="display: block;">
+						<div class="box-body" style="display: block;" >
 
+							<div class="chartWrapper">
+								<div class="chartAreaWrapper">
 
-
-							<canvas id="bar" class="chart chart-bar" data-data="chart2_data"
-								data-labels="chart2_label" data-series="chart2_series" data-colours="chart2_colours"
-							>
+									<canvas id="bar" class="chart chart-bar"
+										data-data="chart2_data" data-labels="chart2_label"
+										data-series="chart1_series" data-colours="chart2_colours">
                 </canvas>
+								</div>
+							</div>
 						</div>
 					</div>
 				</div>

@@ -31,7 +31,6 @@
 
 </head>
 
-
 <body class="hold-transition skin-blue sidebar-mini"
 	data-ng-app="MainApp">
 	<!-- Main Header -->
@@ -51,19 +50,11 @@
 			</a>
 			<!-- Navbar Right Menu -->
 			<div class="navbar-custom-menu">
-				<ul class="nav navbar-nav">
+				<a class="dropdown-toggle" href="login"> <span
+					style="color: black; font-size: 17px; padding-right: 20px;"
+					class="hidden-xs">Logout</span>
+				</a>
 
-
-
-					<!-- User Account Menu -->
-					<li class="dropdown user user-menu">
-						<!-- Menu Toggle Button --> <a  class="dropdown-toggle"
-						data-toggle="dropdown"> <!-- The user image in the navbar--> <!-- hidden-xs hides the username on small devices so only the image appears. -->
-							<span style="color: black; font-size: 17px; padding-right: 20px;"
-							class="hidden-xs">Megatech</span>
-					</a> <!-- Control Sidebar Toggle Button --> <!--  <li> <a href="#" data-toggle="control-sidebar"><i class="fa fa-gears" style="color: black"></i></a> </li>-->
-					</li>
-				</ul>
 
 			</div>
 		</nav>
@@ -80,16 +71,23 @@
 				<li class="active"><a data-ui-sref="home"><i
 						class="fa fa-home"></i> <span>Home</span></a></li>
 				<li class="treeview"><a href="#"><i class="fa fa-map-o"></i>
-						<span>Sites</span><span class="pull-right-container"> <i class="fa fa-angle-left pull-right"></i> </span> </a>
+						<span>Sites</span><span class="pull-right-container"> <i
+							class="fa fa-angle-left pull-right"></i>
+					</span> </a>
 					<ul class="treeview-menu">
-						<li class="treeview"><a	data-ng-click="listCtrl.doSomething('1','Abu Dhabi')">ABU DHABHI</a>
+						<li class="treeview"><a
+							data-ng-click="listCtrl.doSomething('1','Abu Dhabi')">ABU
+								DHABHI</a>
 
 							<ul class="treeview-menu">
-								<li><a data-ng-click="listCtrl.doSomething('1','AL Wahdah')"
+								<li><a
+									data-ng-click="listCtrl.doSomething('1','AL Wahdah')"
 									data-ui-sref="area({ id: '15' })">AL WAHDAH</a></li>
-								<li><a data-ng-click="listCtrl.doSomething('2','AL Rowdah')"
+								<li><a
+									data-ng-click="listCtrl.doSomething('2','AL Rowdah')"
 									data-ui-sref="area({ id: '16' })">AL ROWDAH</a></li>
-									<li><a data-ng-click="listCtrl.doSomething('2','AL Rowdah')"
+								<li><a
+									data-ng-click="listCtrl.doSomething('2','AL Rowdah')"
 									data-ui-sref="area({ id: '17' })">AL MUSHRIF</a></li>
 							</ul></li>
 					</ul></li>
@@ -136,15 +134,17 @@
 	 -->
 
 	<script type="text/javascript" src="js/angular-ui-router.js"></script>
-	
+
 
 	<script type="text/javascript"
 		src="webjars/angularjs/1.6.2/angular-resource.js"></script>
-	
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/1.0.1/Chart.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.12.0/ui-bootstrap-tpls.min.js"></script>
-  
-  	<script type="text/javascript" src="js/angular-chart.js"></script>
+
+	<script
+		src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/1.0.1/Chart.min.js"></script>
+	<script
+		src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.12.0/ui-bootstrap-tpls.min.js"></script>
+
+	<script type="text/javascript" src="js/angular-chart.js"></script>
 
 
 	<!-- date-range-picker moment -->
@@ -154,12 +154,12 @@
 	<!-- Angular daterangepicker -->
 	<script src="js/ng-bs-daterangepicker.js"></script>
 
-	
-	
 
-<!-- AdminLTE App --> 
-<script src="dist/js/app.min.js"></script> 
-	
+
+
+	<!-- AdminLTE App -->
+	<script src="dist/js/app.min.js"></script>
+
 	<script type="text/javascript" src="js/appFront.js"></script>
 	<script type="text/javascript" src="js/listController.js"></script>
 	<script type="text/javascript" src="js/dateController.js"></script>
@@ -169,5 +169,6 @@
 
 	<!-- AdminLTE for demo purposes -->
 </body>
+
 
 </html>

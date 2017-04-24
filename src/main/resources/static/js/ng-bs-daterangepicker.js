@@ -35,6 +35,14 @@
 						options.timePicker = true;
 						angular.extend(options, $parse($attributes.enabletimepicker)($scope));
 					}
+					else if ($attributes.enableautoapply) {
+						options.autoApply = true;
+						angular.extend(options, $parse($attributes.enableautoapply)($scope));
+					}
+					else if ($attributes.enableDropdowns) {
+						options.showDropdowns = true;
+						angular.extend(options, $parse($attributes.enableDropdowns)($scope));
+					}
 
 					function datify(date) {
 						return moment.isMoment(date) ? date.toDate() : date;
