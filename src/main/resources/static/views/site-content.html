@@ -1,7 +1,7 @@
 
 <!-- Content Wrapper. Contains page content -->
 
-<div class="content-wrapper">
+<div class="content-wrapper" data-ng-controller="RouteController">
 
 
 
@@ -10,7 +10,7 @@
 
 		<!-- Page Content Here -->
 
-		<div class="row" data-ng-controller="dateCtrl">
+		<div class="row">
 
 			<div class="col-md-12">
 				<div class="box box-primary">
@@ -45,16 +45,17 @@
 
 						<div class="col-xs-12 col-sm-12 col-md-4"></div>
 						<div class="col-xs-12 col-sm-12 col-md-4">
-							<div class="form-group">
+							<div class="form-group" style="font-family: sans-serif;">
 								<div class="input-group">
 									<div class="input-group-addon">
 										<i class="fa fa-clock-o"></i>
 									</div>
 									<!-- DateRange Picker -->
-									<input data-type="daterange" class="form-control pull-right"
-										data-enableTimePicker="true" data-ranges="ranges"
-										data-enableAutoApply="true" data-ng-model="myDateRange"
-										data-enableDropdowns="true" /> <span class="input-group-btn">
+									<input style="font-family: sans-serif;" data-type="daterange"
+										class="form-control pull-right" data-enableTimePicker="true"
+										data-ranges="ranges" data-enableAutoApply="true"
+										data-ng-model="myDateRange" data-enableDropdowns="true" /> <span
+										class="input-group-btn">
 										<button type="button" class="btn btn-info btn-flat"
 											data-ng-click="getDate(myDateRange.startDate,myDateRange.endDate)">
 											<b>Go</b>
@@ -70,7 +71,7 @@
 
 
 
-		<div class="row" data-ng-controller="RouteController">
+		<div class="row">
 			<div class="col-md-2">
 				<div class="box box-widget widget-user-2">
 					<div class="widget" style="text-align: center">
@@ -82,7 +83,7 @@
 								<div class="description-block">
 									<h3 class="bignumber" data-ng-init="gettag15()">
 
-										{{(myDateRange.tagValue15)| number : 2}}<span class="smalltag"><br>
+										{{(tagValue15)| number : 2}}<span class="smalltag"><br>
 											KWH</span>
 									</h3>
 									<div class="progress sm">
@@ -106,8 +107,8 @@
 								<div class="description-block" data-ng-init="gettag15()">
 									<h3 class="bignumber">
 
-										{{(myDateRange.tagValue15)*12| number : 2}}<span
-											class="smalltag"><br> AED</span>
+										{{(tagValue15)*12| number : 2}}<span class="smalltag"><br>
+											AED</span>
 									</h3>
 									<div class="progress sm">
 										<div class="progress-bar progress-bar-red" style="width: 73%"></div>
@@ -129,7 +130,7 @@
 								<div class="description-block" data-ng-init="gettag15()">
 									<h3 class="bignumber">
 
-										{{(myDateRange.tagValue15)/(((myDateRange.endDate-myDateRange.startDate)/(60
+										{{(tagValue15)/(((myDateRange.endDate-myDateRange.startDate)/(60
 										* 60 * 1000))/24)| number : 2}}<span class="smalltag"><br>
 											KWH</span>
 									</h3>
@@ -154,9 +155,8 @@
 								<div class="description-block" data-ng-init="gettag15()">
 									<h3 class="bignumber">
 
-										{{(myDateRange.endDate-myDateRange.startDate)/(60 * 60 *
-										1000)| number : 0}}<span class="smalltag"><br>
-											Hours</span>
+										{{(endDate-startDate)/(60 * 60 * 1000)| number : 0}}<span
+											class="smalltag"><br> Hours</span>
 									</h3>
 									<div class="progress sm">
 										<div class="progress-bar progress-bar-yellow"
@@ -179,8 +179,8 @@
 								<div class="description-block">
 									<h3 class="bignumber" data-ng-init="gettag15()">
 
-										{{(myDateRange.tagValue15)/10.43| number : 2}}<span
-											class="smalltag"><br> KWH</span>
+										{{(tagValue15)/10.43| number : 2}}<span class="smalltag"><br>
+											KWH</span>
 									</h3>
 									<div class="progress sm">
 										<div class="progress-bar progress-bar-green"
@@ -203,8 +203,8 @@
 								<div class="description-block">
 									<h3 class="bignumber" data-ng-init="gettag15()">
 
-										{{(myDateRange.tagValue15)*4.26| number : 2}}<span
-											class="smalltag"><br> KWH</span>
+										{{(tagValue15)*4.26| number : 2}}<span class="smalltag"><br>
+											KWH</span>
 									</h3>
 									<div class="progress sm">
 										<div class="progress-bar progress-bar-yellow"
@@ -224,7 +224,7 @@
 
 
 	<section class="content">
-		<div class="row" data-ng-controller="chartCtrl" style="width: 100%;">
+		<div class="row" style="width: 100%;">
 
 			<div class="col-md-6">
 
@@ -235,15 +235,16 @@
 							<h3 class="box-title">Energy Consumption</h3>
 
 						</div>
-						<div class="box-body" style="display: block;" data-ng-init="getCharts(myDateRange.startDate,myDateRange.endDate)">
+						<div class="box-body" style="display: block;"
+							data-ng-init="getAreaCharts(startDate,endDate)">
 							<div class="chartWrapper">
 								<div class="chartAreaWrapper">
 									<canvas id="line" class="chart chart-line"
 										data-data="chart1_data" data-labels="chart1_label"
 										data-series="chart1_series" data-colours="chart1_colours"
-										data-options="options"	 width="20000" height="300">
+										data-options="options" width="20000" height="300">
                 </canvas>
-								
+
 								</div>
 							</div>
 						</div>
@@ -258,8 +259,8 @@
 							<h3 class="box-title">Areawise Plan vs Actual Consumption</h3>
 
 						</div>
-						<div class="box-body" style="display: block;" >
-
+						<div class="box-body" style="display: block;"
+							data-ng-init="getBarCharts()">
 							<div class="chartWrapper">
 								<div class="chartAreaWrapper">
 

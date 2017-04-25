@@ -16,6 +16,7 @@
 						onmouseover='this.style.color="#48f"'
 						onmouseout='this.style.color="#444"'>
 
+
 						<div class="widget-user-image">
 							<img src="dist/img/building01.png" alt="User Avatar">
 						</div>
@@ -28,11 +29,12 @@
 						<div class="row">
 							<div class="col-sm-6 border-right">
 								<div class="description-block" data-ng-init="gettag15()">
+							
 									<h3 style="height: 60px;">Actual Consumption</h3>
-									<p class="bignumber">
-										{{(myDateRange.tagValue15)| number : 2}}<span class="smalltag"><br>
+									<h2 class="bignumber">
+										{{(tagValue15)| number : 2}}<span class="smalltag"><br>
 											KWH</span>
-									</p>
+									</h2>
 									<div class="progress sm">
 										<div class="progress-bar progress-bar-green"
 											style="width: 80%"></div>
@@ -44,11 +46,11 @@
 							<div class="col-sm-6 border">
 								<div class="description-block" data-ng-init="gettag15()">
 									<h3 style="height: 60px;">Average Daily Load</h3>
-									<p class="bignumber">
-										{{(myDateRange.tagValue15)/(((myDateRange.endDate-myDateRange.startDate)/(60
+									<h2 class="bignumber">
+										{{(tagValue15)/(((endDate-startDate)/(60
 										* 60 * 1000))/24)| number : 2}}<span class="smalltag"><br>
 											KWH</span>
-									</p>
+									</h2>
 									<div class="progress sm">
 										<div class="progress-bar progress-bar-red" style="width: 80%"></div>
 									</div>
@@ -84,19 +86,15 @@
 						<h4 class="widget-user-desc">AL ROWDAH, Abu Dhabhi</h4>
 					</div>
 
-<div>
-      <input type="button" ng-click="myDateRange.stopTimer()" value="Stop Count">
-    </div>
-
 					<div class="box-footer">
 						<div class="row">
 							<div class="col-sm-6 border-right">
 								<div class="description-block" data-ng-init="gettag16()">
 									<h3 style="height: 60px;">Actual Consumption</h3>
-									<p class="bignumber">
-										{{(myDateRange.tagValue16)| number : 2}}<span class="smalltag"><br>
+									<h2 class="bignumber">
+										{{(tagValue16)| number : 2}}<span class="smalltag"><br>
 											KWH</span>
-									</p>
+									</h2>
 									<div class="progress sm">
 										<div class="progress-bar progress-bar-green"
 											style="width: 80%"></div>
@@ -108,11 +106,11 @@
 							<div class="col-sm-6 border">
 								<div class="description-block" data-ng-init="gettag16()">
 									<h3 style="height: 60px;">Average Daily Load</h3>
-									<p class="bignumber">
-										{{(myDateRange.tagValue16)/(((myDateRange.endDate-myDateRange.startDate)/(60
+									<h2 class="bignumber">
+										{{(tagValue16)/(((endDate-startDate)/(60
 										* 60 * 1000))/24)| number : 2}}<span class="smalltag"><br>
 											KWH</span>
-									</p>
+									</h2>
 									<div class="progress sm">
 										<div class="progress-bar progress-bar-red" style="width: 80%"></div>
 									</div>
@@ -143,8 +141,8 @@
 							<img src="dist/img/building03.png" alt="User Avatar">
 						</div>
 						<!-- /.widget-user-image -->
-						<h2 class="widget-user-username">Mega Plaza</h2>
-						<h4 class="widget-user-desc">AL MUSHRIF, Abu Dhabhi</h4>
+						<h1 class="widget-user-username">Mega Plaza</h1>
+						<h4 class="widget-user-desc">AL MUSHRIF, Abu Dhabi</h4>
 					</div>
 
 					<div class="box-footer">
@@ -152,10 +150,10 @@
 							<div class="col-sm-6 border-right">
 								<div class="description-block" data-ng-init="gettag17()">
 									<h3 style="height: 60px;">Actual Consumption</h3>
-									<p class="bignumber">
-										{{(myDateRange.tagValue17)| number : 2}}<span class="smalltag"><br>
+									<h2 class="bignumber">
+										{{(tagValue17)| number : 2}}<span class="smalltag"><br>
 											KWH</span>
-									</p>
+									</h2>
 									<div class="progress sm">
 										<div class="progress-bar progress-bar-green"
 											style="width: 80%"></div>
@@ -167,11 +165,11 @@
 							<div class="col-sm-6 border">
 								<div class="description-block" data-ng-init="gettag17()">
 									<h3 style="height: 60px;">Average Daily Load</h3>
-									<p class="bignumber">
-										{{(myDateRange.tagValue17)/(((myDateRange.endDate-myDateRange.startDate)/(60
+									<h2 class="bignumber">
+										{{(tagValue17)/(((endDate-startDate)/(60
 										* 60 * 1000))/24)| number : 2}}<span class="smalltag"><br>
 											KWH</span>
-									</p>
+									</h2>
 									<div class="progress sm">
 										<div class="progress-bar progress-bar-red" style="width: 80%"></div>
 									</div>

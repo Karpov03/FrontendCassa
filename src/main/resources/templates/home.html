@@ -38,7 +38,7 @@
 		<!-- Logo -->
 		<a href="#" class="logo" style="height: 60px;"> <!-- mini logo for sidebar mini 50x50 pixels -->
 			<span class="logo-mini"><img src="dist/img/logoicon.png" /></span> <!-- logo for regular state and mobile devices -->
-			<span class="logo-lg"> <b>Simple KWH</b></span>
+			<span class="logo-lg"> <h2><b>Simple KWH</b></h2></span>
 
 		</a>
 
@@ -48,15 +48,7 @@
 			<a href="#" class="sidebar-toggle" data-toggle="offcanvas"
 				role="button"> <span class="sr-only">Toggle navigation</span>
 			</a>
-			<!-- Navbar Right Menu -->
-			<div class="navbar-custom-menu">
-				<a class="dropdown-toggle" href="login"> <span
-					style="color: black; font-size: 17px; padding-right: 20px;"
-					class="hidden-xs">Logout</span>
-				</a>
-
-
-			</div>
+			
 		</nav>
 	</header>
 
@@ -65,32 +57,34 @@
 	<!-- Left side column. contains the logo and sidebar -->
 	<aside class="main-sidebar"
 		data-ng-Controller="ListController as listCtrl">
-		<section class="sidebar">
+		<section class="sidebar" >
 			<ul class="sidebar-menu">
 				<!-- Optionally, you can add icons to the links -->
-				<li class="active"><a data-ui-sref="home"><i
-						class="fa fa-home"></i> <span>Home</span></a></li>
-				<li class="treeview"><a href="#"><i class="fa fa-map-o"></i>
-						<span>Sites</span><span class="pull-right-container"> <i
+				<li class="active"><a data-ui-sref="home"><h4><i
+						class="fa fa-home"></i> <span class="menutext">Home</span></h4></a></li>
+				<li class="treeview"><a href="#"><h4><i class="fa fa-map-o"></i>
+						<span class="menutext">Sites</span><span class="pull-right-container"> <i
 							class="fa fa-angle-left pull-right"></i>
-					</span> </a>
+					</span></h4> </a>
 					<ul class="treeview-menu">
 						<li class="treeview"><a
-							data-ng-click="listCtrl.doSomething('1','Abu Dhabi')">ABU
-								DHABHI</a>
+							data-ng-click="listCtrl.doSomething('1','Abu Dhabi')" data-ui-sref="area({ id: '15' })"><h6>ABU
+								DHABI</h6></a>
 
 							<ul class="treeview-menu">
 								<li><a
 									data-ng-click="listCtrl.doSomething('1','AL Wahdah')"
-									data-ui-sref="area({ id: '15' })">AL WAHDAH</a></li>
+									data-ui-sref="area({ id: '15' })"><h6>AL WAHDAH</h6></a></li>
 								<li><a
 									data-ng-click="listCtrl.doSomething('2','AL Rowdah')"
-									data-ui-sref="area({ id: '16' })">AL ROWDAH</a></li>
+									data-ui-sref="area({ id: '16' })"><h6>AL ROWDAH</h6></a></li>
 								<li><a
 									data-ng-click="listCtrl.doSomething('2','AL Rowdah')"
-									data-ui-sref="area({ id: '17' })">AL MUSHRIF</a></li>
+									data-ui-sref="area({ id: '17' })"><h6>AL MUSHRIF</h6></a></li>
 							</ul></li>
 					</ul></li>
+					<li><a data-ui-sref="home"><h4><i
+						class="fa fa-home"></i> <span class="menutext">Logout</span></h4></a></li>
 
 			</ul>
 			<!-- /.sidebar-menu -->
@@ -162,9 +156,7 @@
 
 	<script type="text/javascript" src="js/appFront.js"></script>
 	<script type="text/javascript" src="js/listController.js"></script>
-	<script type="text/javascript" src="js/dateController.js"></script>
-	<script type="text/javascript" src="js/chartController.js"></script>
-
+	
 
 
 	<!-- AdminLTE for demo purposes -->
