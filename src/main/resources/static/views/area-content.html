@@ -1,6 +1,7 @@
 
 <!-- Content Wrapper. Contains page content -->
-<div class="content-wrapper" data-ng-controller="SiteController">
+
+<div class="content-wrapper" data-ng-controller="AreaController">
 
 
 
@@ -241,7 +242,7 @@
 									<canvas id="line" class="chart chart-line"
 										data-data="chart1_data" data-labels="chart1_label"
 										data-series="chart1_series" data-colours="chart1_colours"
-										data-options="options" width="20000" height="300">
+										data-options="chart1_options" width="20000" height="300">
                 </canvas>
 
 								</div>
@@ -255,17 +256,18 @@
 				<div class="box box-primary">
 					<div class="box-body">
 						<div class="box-header with-border">
-							<h3 class="box-title">Actual Consumption vs Areawise Plan </h3>
+							<h3 class="box-title">Light and A/C Profile</h3>
 
 						</div>
 						<div class="box-body" style="display: block;"
-							data-ng-init="getBarCharts(startDate,endDate)">
+							data-ng-init="getBarCharts()">
 							<div class="chartWrapper">
 								<div class="chartAreaWrapper">
 
-									<canvas id="bar" class="chart chart-bar"
+									<canvas id="line" class="chart chart-line"
 										data-data="chart2_data" data-labels="chart2_label"
-										data-series="chart2_series" data-colours="chart2_colours">
+										data-series="chart2_series" data-colours="chart2_colours"
+										data-options="chart2_options" width="20000" height="300">
                 </canvas>
 								</div>
 							</div>

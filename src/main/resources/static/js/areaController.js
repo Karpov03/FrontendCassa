@@ -8,45 +8,11 @@ mainApp.run(function($rootScope) {
 
 
 
-mainApp.config(["$stateProvider", "$urlRouterProvider", '$locationProvider',
-    function($stateProvider, $urlRouterProvider, $locationProvider) {
 
-        $urlRouterProvider.otherwise("/home/15");
-
-        $stateProvider.state("home", {
-
-            url: "/home/:id",
-            templateUrl: 'views/home-content.html',
-            controller: 'RouteController',
-            params: {
-                id: '15'
-            }
-
-        }).state("login", {
-
-            url: "/login",
-            templateUrl: 'login.html',
-            controller: 'RouteController',
-
-        }).state("area", {
-
-            url: "/area/:id",
-            templateUrl: 'views/site-content.html',
-            controller: 'RouteController',
-            // default uri params
-            params: {
-                id: '15'
-            }
-
-        });
-        $locationProvider.html5Mode(true);
-
-    }
-]);
 
 mainApp
     .controller(
-        'RouteController', [
+        'AreaController', [
             '$scope',
             '$http',
             '$rootScope',
@@ -55,47 +21,57 @@ mainApp
             function($scope, $http, $rootScope, $stateParams,
                 $interval) {
 
-                var today = new Date().getTime();
-                var yesterday = new Date().getTime() - 43200000;
-                $scope.startDate = new Date().getTime() - 43200000;
-                $scope.endDate = new Date().getTime();
+            	 var today = new Date().getTime();
+                 var sixhours = new Date().getTime() -  21600000;
+                 var twelve_hours = new Date().getTime() -  43200000;
+                 var twofourhours = new Date().getTime() -  86400000;
+                 var sevendays = new Date().getTime() -  604800000;
+                 var thirtydays = new Date().getTime() -  2592000000;
+                 $scope.startDate = new Date().getTime() - 14400000;
+                 $scope.endDate = new Date().getTime();
 
-                console.log(today + " : " + yesterday);
+                 console.log(today + " : " + sixhours);
+                 
+                 var sid = $stateParams.id;
+                 var sid1 = parseInt(sid) + parseInt(1);
+                 var sid2 = parseInt(sid) + parseInt(2);
+
+                 console.log("Defined id:" + sid1);
+
+                 $scope.ranges = {
+                 	"Last 6 Hours": [
+                                  sixhours,today
+                         ],
+                 		"Last 12 Hours": [
+                 			twelve_hours,today
+                     ],
+                     "Last 24 Hours": [
+                     	twofourhours,today
+                     ],
+                     "Last 7 Days": [
+                     	sevendays,today
+                     ],
+                     "Last 30 Days": [
+                     	thirtydays,today
+                     ]
+                 };
+
+
                 
-                var sid = $stateParams.id;
-                var sid1 = parseInt(sid) + parseInt(1);
-                var sid2 = parseInt(sid) + parseInt(2);
+                
+                var $this = this;
 
-                console.log("Defined id:" + sid1);
+                $this.doSomething = function(clickedId, nameId) {
 
-                $scope.ranges = {
-                    "Today": [
-                        "2017-04-21T08:16:38.824Z",
-                        "2017-04-21T08:16:38.824Z"
-                    ],
-                    "Yesterday": [
-                        "2017-04-20T08:16:38.824Z",
-                        "2017-04-20T08:16:38.824Z"
-                    ],
-                    "Last 7 Days": [
-                        "2017-04-15T08:16:38.824Z",
-                        "2017-04-21T08:16:38.824Z"
-                    ],
-                    "Last 30 Days": [
-                        "2017-03-23T08:16:38.824Z",
-                        "2017-04-21T08:16:38.824Z"
-                    ],
-                    "This Month": [
-                        "2017-03-31T18:30:00.000Z",
-                        "2017-04-30T18:29:59.999Z"
-                    ],
-                    "Last Month": [
-                        "2017-02-28T18:30:00.000Z",
-                        "2017-03-31T18:29:59.999Z"
-                    ]
+                    console.log("Clicked Id is " + clickedId + " : " + nameId)
+                    
+                    $scope.getAreaCharts($scope.startDate,$scope.endDate);
+                    $scope.getBarCharts();
+
                 };
-
-
+                
+                
+                
 
                 $scope.getDate = function(sDate, eDate) {
 
@@ -109,6 +85,7 @@ mainApp
                         
                         
                         $scope.getAreaCharts($scope.startDate,$scope.endDate);
+                    $scope.getBarCharts($scope.startDate,$scope.endDate);
 
                     $http.get(
                         "https://energyiotbackdev.mybluemix.net/logics/sum/"+sid+"/" +
@@ -144,7 +121,7 @@ mainApp
                     "pointHighlightStroke": "rgba(151,211,128,.7)"
                 }];
 
-                $scope.options = {
+                $scope.chart1_options = {
                     scales: {
                         yAxes: [{
                             id: 'y-axis-1',
@@ -159,20 +136,35 @@ mainApp
                     responsive: false
                 }
 
-                $scope.chart2_label = ['AL WAHDAH', 'AL ROWDAH', 'AL MUSHRIF'];
-                var chart2_tempdata = [];
-                var chart2_tempdata1 = [];
+                $scope.chart2_label = [];
+                var chart2_light = [];
+                var chart2_ac = [];
 
                 $scope.chart2_data = [];
-                
+                $scope.chart2_series = ['Light' , 'A/C'];
 
                 $scope.chart2_colours = [{ // default
-                    "fillColor": "rgba(151,211,78,.8)",
+                    "fillColor": "rgba(151,211,78,.6)",
                     "strokeColor": "rgba(151,211,98,.7)"
                 }, { // default
-                    "fillColor": "rgba(53,162,203,.8)",
+                    "fillColor": "rgba(53,162,203,.6)",
                     "strokeColor": "rgba(53,162,273,.7)"
                 }];
+				
+				$scope.chart2_options = {
+                    scales: {
+                        yAxes: [{
+                            id: 'y-axis-1',
+                            type: 'linear',
+                            display: true,
+                            position: 'left'
+                        }]
+                    },
+                    legend: {
+                        display: false
+                    },
+                    responsive: false
+                }
 
                 function addZero(i) {
                     if (i < 10) {
@@ -187,13 +179,13 @@ mainApp
 
                     startCDate = new Date(sDate).getTime();
                     endCDate = new Date(eDate).getTime();
-                    $scope.chart1_label=[];
-                    $scope.chart1_data=[];
+                    $scope.chart1_label.length=0;
+                    $scope.chart1_data.length=0;
 
                     $http.get(
                         "https://energyiotbackdev.mybluemix.net/tags/gettag/" + sid + "/" +
-                       startCDate + "/" +
-                      endCDate).then(function(response) {
+                      $scope.startDate + "/" +
+                      $scope.endDate).then(function(response) {
 
                         angular.forEach(response.data, function(data) {
                             var d = new Date(data.timestamps);
@@ -217,15 +209,17 @@ mainApp
                 }
                 
                 
-                $scope.getBarCharts = function() {
-                	
-                	
-                     $scope.chart2_data=[];
+                $scope.getBarCharts = function(sDate, eDate) {
 
-                $http.get("https://energyiotbackdev.mybluemix.net/tags/gettag/" + sid1)
-                    .then(function(response) {
+                    startCDate = new Date(sDate).getTime();
+                    endCDate = new Date(eDate).getTime();
+                    $scope.chart2_label.length=0;
+                    $scope.chart2_data.length=0;
+                $http.get( "https://energyiotbackdev.mybluemix.net/tags/gettag/" + sid + "/" +
+                       $scope.startDate + "/" +
+                      $scope.endDate).then(function(response) {
 
-                    	console.log("bar1 called");
+                    	console.log("bar1 called"+sid);
                         angular.forEach(response.data, function(data) {
                         	
                             var d = new Date(data.timestamps);
@@ -234,27 +228,18 @@ mainApp
                             var s = addZero(d.getSeconds());
                             var t = h + ":" + m + ":" + s;
 
-                            // $scope.chart2_label.push(t);
+                            $scope.chart2_label.push(t);
 
                             // $scope.labels.push(data.timestamps);
-                            chart2_tempdata.push(data.value);
+                            chart2_light.push(data.value*.23);
+							 chart2_ac.push(data.value*.38);
 
                         });
 
-                        $scope.chart2_data.push(chart2_tempdata);
+                       $scope.chart2_data.push(chart2_ac);
+						 $scope.chart2_data.push(chart2_light);
                     });
 
-                $http.get("https://energyiotbackdev.mybluemix.net/tags/gettag/" + sid2)
-                    .then(function(response) {
-                    	console.log("bar2 called");
-                        angular.forEach(response.data, function(data) {
-
-                            chart2_tempdata1.push(data.value);
-
-                        });
-
-                        $scope.chart2_data.push(chart2_tempdata1);
-                    });
                 }
 
                 var resetdate = function() {
@@ -363,18 +348,5 @@ mainApp
 
             }
 
-        ]); //End of RouteController
+        ]); //End of AreaController
 
-var ListController = function($scope, $http) {
-
-    var $this = this;
-
-    $this.doSomething = function(clickedId, nameId) {
-
-        console.log("Clicked Id is " + clickedId + " : " + nameId)
-
-    };
-
-}
-
-mainApp.controller('ListController', ListController);
