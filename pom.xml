@@ -4,11 +4,11 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.megatech</groupId>
-	<artifactId>CassandraFrontApp</artifactId>
+	<artifactId>EnergyIOTFront</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>war</packaging>
 
-	<name>FrontendCassa</name>
+	<name>EnergyIOTFront</name>
 	<description>Test Project for Spring Boot Cassandra</description>
 
 	<parent>

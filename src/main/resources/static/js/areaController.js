@@ -141,7 +141,7 @@ mainApp
                 var chart2_ac = [];
 
                 $scope.chart2_data = [];
-                $scope.chart2_series = ['Light' , 'A/C'];
+                $scope.chart2_series = ['A/C' , 'LIGHT'];
 
                 $scope.chart2_colours = [{ // default
                     "fillColor": "rgba(151,211,78,.6)",
@@ -181,6 +181,7 @@ mainApp
                     endCDate = new Date(eDate).getTime();
                     $scope.chart1_label.length=0;
                     $scope.chart1_data.length=0;
+                    chart1_tempdata.length=0;
 
                     $http.get(
                         "https://energyiotbackdev.mybluemix.net/tags/gettag/" + sid + "/" +
@@ -213,6 +214,8 @@ mainApp
 
                     startCDate = new Date(sDate).getTime();
                     endCDate = new Date(eDate).getTime();
+                    chart2_light.length=0;
+                    chart2_ac.length=0;
                     $scope.chart2_label.length=0;
                     $scope.chart2_data.length=0;
                 $http.get( "https://energyiotbackdev.mybluemix.net/tags/gettag/" + sid + "/" +
@@ -231,13 +234,15 @@ mainApp
                             $scope.chart2_label.push(t);
 
                             // $scope.labels.push(data.timestamps);
-                            chart2_light.push(data.value*.23);
-							 chart2_ac.push(data.value*.38);
+                            chart2_light.push(data.value*Math.abs(Math.cos(15)));
+							 chart2_ac.push(data.value*Math.abs(Math.sin(-135)));
 
                         });
-
-                       $scope.chart2_data.push(chart2_ac);
-						 $scope.chart2_data.push(chart2_light);
+                        $scope.chart2_data.push(chart2_light);
+                        $scope.chart2_data.push(chart2_ac);
+                       
+                       
+						
                     });
 
                 }
@@ -259,9 +264,7 @@ mainApp
 
 
                 $scope.refreshTag = function() {
-                    $scope.gettag15();
-                    $scope.gettag16();
-                    $scope.gettag17();
+                  
                    }
                 var promise;
                 var promise1;
